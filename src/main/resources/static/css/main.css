@@ -11,6 +11,26 @@
     
 }
 
+.btninout {
+    margin-left: 81%;
+}
+
+#sign1, #sign2{
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+                width: 180px;
+                margin-bottom:7px;
+                cursor: pointer;
+
+              }
+#sign2{
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+                width: 180px;
+                cursor: pointer;
+              }
 .tm-logo{
     align-content: center;
     display: block;
