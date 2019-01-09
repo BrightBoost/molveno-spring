@@ -4,18 +4,17 @@
     font: 1rem 'Fira Sans', sans-serif;
 }
 
-.tm-header{
+.btninout{
     background: #fff;
     display: block;
     padding: 20px;
+    margin-left:79%;
     
 }
 
-.btninout {
-    margin-left: 81%;
-}
 
-#sign1, #sign2{
+
+.sign1{
                 background-color: white;
                 color: black;
                 border: 2px solid #555555;
@@ -24,13 +23,7 @@
                 cursor: pointer;
 
               }
-#sign2{
-                background-color: white;
-                color: black;
-                border: 2px solid #555555;
-                width: 180px;
-                cursor: pointer;
-              }
+
 .tm-logo{
     align-content: center;
     display: block;
