@@ -1,0 +1,12 @@
+INSERT INTO Room (name) VALUES ('Luxury');
+INSERT INTO Room (name) VALUES ('Luxury');
+INSERT INTO Room (name) VALUES ('Luxury');
+INSERT INTO Room (name) VALUES ('Luxury');
+INSERT INTO Room (name) VALUES ('Standard');
+INSERT INTO Room (name) VALUES ('Standard');
+INSERT INTO Room (name) VALUES ('Standard');
+INSERT INTO Room (name) VALUES ('Standard');
+INSERT INTO Room (name) VALUES ('Budget');
+INSERT INTO Room (name) VALUES ('Budget');
+INSERT INTO Room (name) VALUES ('Budget');
+INSERT INTO Room (name) VALUES ('Budget');

@@ -1,7 +1,4 @@
-/**
- * handle counter
- * @writable text input is manual write
- */
+
 ;(function () {
     'use strict';
     $.fn.handleCounter = function (options) {

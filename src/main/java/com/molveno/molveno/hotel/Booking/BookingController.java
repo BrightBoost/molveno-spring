@@ -8,10 +8,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingLogic {
+public class BookingController {
 
     public static boolean checkDate(LocalDate checkinRequest, LocalDate checkoutRequest, List<Booking> currentBookings, Room room) {
-        int roomId = room.getId();
+        long roomId = room.getId();
 
 
         for (Booking current : currentBookings) {

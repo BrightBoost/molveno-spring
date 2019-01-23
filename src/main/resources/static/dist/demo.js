@@ -4,19 +4,21 @@
 $(function ($) {
        $('#handleCounter1').handleCounter({
     minimum: 1,
-    maximize: 100,
-   
-           
+    maximize: 10,
     })
           
         $('#handleCounter2').handleCounter({
     minimum: 1,
-    maximize: 100,
-             
+    maximize: 10,  
            })
-       
-     
-       
+           $('#handleCounter3').handleCounter({
+               minimum: 1,
+               maximize: 10,
+                      })
+                      $('#handleCounter4').handleCounter({
+                                     minimum: 1,
+                                     maximize: 10,
+                                            })
        });
       
    
@@ -24,22 +26,14 @@ $(function ($) {
 //for datepicker
 
 addEventListener('DOMContentLoaded', function () {
-	
-
-   
-    
-	pickmeup('.range', {
+    	pickmeup('.range', {
 		mode : 'range',
         separator: '    to   ',
         position :'bottom',
-//        hide_on_select : true,
+        hide_on_select : true,
         format: 'd b-y',
-      
 	});
-//pickmeup('.range').show();
-
-
-    
+pickmeup('.range').show();
 });
 
 
@@ -47,7 +41,7 @@ addEventListener('DOMContentLoaded', function () {
 function initMap() {
         var uluru = {lat:  46.133264, lng: 10.968631};  
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 16,
           center: uluru
         });
         var marker = new google.maps.Marker({

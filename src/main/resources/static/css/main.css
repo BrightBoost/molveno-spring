@@ -461,7 +461,7 @@ display: inline-block;
 }
 
 .tm-trans p{
-    font-size: 1.8vw;
+    font-size: 1vw;
 
 }
 .tm-trans div{
@@ -496,10 +496,13 @@ display: inline-block;
      background: #353535;
     position: relative;
 }
-.tm-form1, .tm-form2{
+.tm-form1 {
    
     padding: 2% 5%;
     
+}
+.tm-form2{
+    padding: 1% 5%;
 }
 
  div.vertical-line{
@@ -598,19 +601,17 @@ textarea {
 
 
 
-.tm-num1, .tm-num2{
-    display: inline-block;
-
+.tm-num1, .tm-num2, .tm-num3, .tm-num4{
+    display: contents;
     max-width: 39%;
     width: 39%;
-    margin: 5%;
+    margin: auto;
 }
 
-#number1 , #number2{
-    width:30%;
+#number1 , #number2, #number3, #number4{
+    width:20%;
     padding: 3% 8%;
     margin-top: 5%;
-    
     text-align: center;
 }
 
