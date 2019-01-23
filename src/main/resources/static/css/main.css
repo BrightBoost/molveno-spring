@@ -4,12 +4,25 @@
     font: 1rem 'Fira Sans', sans-serif;
 }
 
-.tm-header{
+.btninout{
     background: #fff;
     display: block;
     padding: 20px;
+    margin-left:79%;
     
 }
+
+
+
+.sign1{
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+                width: 180px;
+                margin-bottom:7px;
+                cursor: pointer;
+
+              }
 
 .tm-logo{
     align-content: center;
