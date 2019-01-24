@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/slick.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+
+    <!--    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">-->
+
+
+    <script type="text/javascript" src="dist/demo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+<header class="tm-header">
+    <img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Molveno Restaurant">
+    <nav class="tm-nav">
+        <div>
+            <ul>
+
+                <li class="tm-list"><a href="index.html" class="geselecteerd">Home</a></li>
+                <li class="tm-list"><a href="menu.html">Menu</a></li>
+                <li class="tm-list"><a href="reservation.html">Reservation</a></li>
+                <li class="tm-list"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="tm-main">
+    <p>Reservation</p>
+</section>
+<main>
+<a id="reservatie" class="anchor" data-anchor="reservatie"></a>
+
+
+<section id="Div1">
+    <br>
+
+
+    </select>
+    <p>Number of persons</p>
+    <select id="nr">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+
+    <P><br>Choose a time for your Reservation:</p>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script type="text/javascript">
+
+
+</script>
+    <script type="text/	javascript">
+	$(function(){
+		$('#tabs').tabs();
+		$('.iseeit-container > pre').each(function(i){
+			eval($(this).text());
+			});
+		});
+</script>
+    Date <input type=text name=datum id=datum readonly  value=''  >
+    <div class="iseeit-container">
+        <script>
+		$('#datum').datepicker({
+		dateFormat: 'dd-mm-yy',
+        minDate: new Date(),
+
+        onSelect: function(selected) {
+         updateAb(selected);}
+		});
+		</script>
+    </div>
+    <br>
+    Time <input type=text name=time id=time readonly  value=''  >
+    <div class="iseeit-container">
+        <script>
+
+function formatDate(date) {
+  var monthNames = [
+    "01", "02", "03",
+    "04", "05", "06", "07",
+    "08", "09", "10",
+    "11", "12"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + '-' + monthNames[monthIndex] + '-' + year;
+}
+
+function updateAb(value){
+    $('#datum').val(value);
+
+    var current = formatDate (new Date());
+    if(current === value){
+        alert("equal");
+        var start = calcHour();
+        start = start;
+        $('#time').timepicker({
+            timeFormat: 'HH:mm',
+            interval: 15,
+            minTime : start,
+            maxTime: '23:59',
+            startTime : start,
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+    }
+    else {
+
+        $('#time').timepicker({
+            timeFormat: 'HH:mm',
+            interval: 15,
+            minTime : '11',
+            maxTime: '23:59',
+            startTime : '11',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+
+           });
+    }
+
+
+}
+function calcHour(){
+    var current = new Date();
+    var minutes = current.getMinutes();
+  //  alert(minutes);
+    //if minutes is equal or bigger than 0 and smaller than 15 it will return hours + 15
+    if(minutes >= 0 && minutes < 15){
+        return current.getHours() +".15";
+    }
+    //if minutes is equal or bigger than 15 and smaller than 30 it will return hours + 30
+    else if(minutes >= 15 && minutes < 30){
+        return current.getHours() +".30";
+
+    }
+    //if minutes is equal or bigger than 30 and smaller than 45 it will return hours + 45
+    else if (minutes >= 30 && minutes < 45) {
+        return current.getHours() +".45";
+
+    }
+    // else will return hours + 00
+    else {
+        return (current.getHours()+1)+".00";
+    }
+    }
+
+      function switchVisible() {
+            if (document.getElementById('Div1')) {
+
+                if (document.getElementById('Div1').style.display == 'none') {
+                    document.getElementById('Div1').style.display = 'block';
+                    document.getElementById('Div2').style.display = 'none';
+                }
+                else {
+                    document.getElementById('Div1').style.display = 'none';
+                    document.getElementById('Div2').style.display = 'block';
+                }
+            }
+}
+      function switchVisible2() {
+            if (document.getElementById('Div2')) {
+
+                if (document.getElementById('Div2').style.display == 'none') {
+                    document.getElementById('Div2').style.display = 'block';
+                    document.getElementById('demo').style.display = 'none';
+                }
+                else {
+                    document.getElementById('Div2').style.display = 'none';
+                    document.getElementById('demo').style.display = 'block';
+                }
+            }
+        addString();
+}
+      function addString() {
+  var a = document.getElementById("1").value;
+  var b = document.getElementById("2").value;
+  var c = document.getElementById("3").value;
+  var d = document.getElementById("4").value;
+  var e = document.getElementById("time").value
+  var f = document.getElementById("datum").value;
+  var g = document.getElementById("nr").value;
+
+  var x = "We made reservation :  <br> on " +f +" at " +e + "<br>"+  "for " + g + " persons <br>" + a +" "+ b + "<br>"+ c ;
+  document.getElementById("demo").innerHTML = x;
+}
+
+</script>
+    </div>
+    <p><br></p>
+
+    <button onclick="switchVisible();">Reserve</button>
+
+
+</section>
+
+<div id="Div2">
+    <p>Select table</p><select id="data301"></select>
+    <P>
+    First name:*<br>
+    <input type="text" name="firstname" id="1"><br>
+    Last name:*<br>
+    <input type="text" name="lastname" id="2"><br>
+    Telephone number:*<br>
+    <input type="text" name="Telephone number" id="3"><br>
+    Email:<br>
+    <input type="email" name="Email" placeholder="Optional"id="4"></br>
+    <br>
+    </P>
+    <button onclick="switchVisible2();">Submit</button>
+
+    <script type="text/javascript">
+
+$(document).ready(function(){
+    console.log("getting the data...");
+
+    $("#hoi").click(function hoi() {
+        alert("it works");
+        });
+
+    $.ajax({
+        url: "/catch",
+        type: "get",
+        success: function (data) {
+                $.each(data,function(i,obj)
+                {
+                // alert(obj.id+":"+obj.nameoftable);
+                 var div_data="<option value="+obj.id+">"+obj.nameoftable+"</option>";
+               // alert(div_data);
+                $(div_data).appendTo('#data301');
+                });
+                }
+    });
+
+    $("#form").submit(function(){
+         alert("Submitted");
+          $.ajax({
+              type: "POST",
+              url: "http://localhost:8080/save",
+              data: $("#form").serialize(),
+              success: alert("success")
+    });
+});
+})
+
+
+
+
+
+</script>
+
+</div>
+<div id="demo">
+</div>
+
+<div id="openingsuren">
+    <h4><br>Openings Time:</h4>
+    <p class="mon">Every Day : 11:00 - 01:00 </p>
+
+</div>
+<p>You can make a reservation online or by calling us</p>
+
+
+</main>
+</body>
+</html>
