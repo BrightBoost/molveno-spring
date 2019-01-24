@@ -13,15 +13,14 @@
 }
 
 
-
-
-
 .btn:disabled, .btn:disabled:hover {
   background-color: #8a364d;
   
 }
 
-.btn-primary { background-color: #ea4370; }
+.btn-primary { 
+  background-color: #ea4370; 
+}
 
 .btn-primary:hover, .btn-primary:focus { background-color: #d3305c; 
 

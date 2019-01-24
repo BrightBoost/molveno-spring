@@ -3,25 +3,20 @@
 
 $(function ($) {
        $('#handleCounter1').handleCounter({
-    minimum: 1,
+    minimum: 0,
     maximize: 10,
     })
           
         $('#handleCounter2').handleCounter({
-    minimum: 1,
+    minimum: 0,
     maximize: 10,  
            })
            $('#handleCounter3').handleCounter({
-               minimum: 1,
-               maximize: 10,
-                      })
-                      $('#handleCounter4').handleCounter({
-                                     minimum: 1,
-                                     maximize: 10,
-                                            })
+            minimum: 0,
+            maximize: 10,  
+                   })
+
        });
-      
-   
 
 //for datepicker
 
@@ -35,7 +30,6 @@ addEventListener('DOMContentLoaded', function () {
 	});
 pickmeup('.range').show();
 });
-
 
 // map
 function initMap() {

@@ -46,8 +46,7 @@
     
     <section class="tm-booking">
     
-
-        <form>
+    <form>
         <div class="tm-form1">
     <!-- <input type="text" name="name" placeholder="Name">  
     <input type="email" name="email" placeholder="E-mail">  -->
@@ -58,62 +57,19 @@
         <option value="premierr">Budget Room € 79.99</option>
     </select>  -->
 
-    <div class="tm-num1">    
-            <section class="tm-roomsection">
-                    <div class="tm-room1">
-                        
-                        <div class="tm-trans"> <div><p>2 Bed</p><p>Free wifi</p><p>Fresh towels</p> </div>
-                        
-                        <div><p>Only for</p><p class="bold">€ 139.99</p> </div></div>
-                        
-                        
-                        <img class="tm-roomimage" src="images/luxuryroom.png">
-                     <p class="s">Luxury Room</p>
-                         <div class="tm-num1" id="handleCounter1">
-                             <button type="button" class="counter-minus btn btn-primary"> - </button>
-                             <input type="text" name="number1" id="number1" value="0">
-                             <button type="button" class="counter-plus btn btn-primary"> + </button>
-                         </div>
-                    </div>
-                        <div class="tm-room1">
-                            
-                            <div class="tm-trans"> <div><p>2 Bed</p><p>Fresh towels</p></div>
-                        
-                        <div><p>Only for</p><p class="bold">€ 99.99</p> </div></div>
-                        
-                            
-                        <img class="tm-roomimage" src="images/deluxroom.png">
-                            <p>Standard Room</p>
-                            <div class="tm-num2" id="handleCounter2">
-                                <button type="button" class="counter-minus btn btn-primary"> - </button>
-                                <input type="text" name="number2" id="number2" value="0">
-                                <button type="button" class="counter-plus btn btn-primary"> + </button>
-                            </div>
-                    </div>
-                        <div class="tm-room1">
-                            
-                            <div class="tm-trans"> <div><p>1 Bed</p><p>Fresh towels</p></div>
-                        
-                        <div><p>Only for</p><p class="bold">€ 79.99</p> </div></div>
-                        
-                            
-                        <img class="tm-roomimage" src="images/premiumroom.png">
-                             <p>Budget Room</p>
-                            <div class="tm-num3" id="handleCounter3">
-                                <button type="button" class="counter-minus btn btn-primary"> - </button>
-                                <input type="text" name="number3" id="number3" value="0">
-                                <button type="button" class="counter-plus btn btn-primary"> + </button>
-                            </div>
-                    </div>
+    <div class="tm-num1" id="handleCounter1">    
+    <label for="number1" >Number of Rooms</label><br/>
+        <button type="button" class="counter-minus btn btn-primary">- </button>
+        <input type="text" name="number1" id="number1" value="0">
+         <button type="button" class="counter-plus btn btn-primary">+  </button>
         </div>
-    <div class="tm-num4" id="handleCounter4">      
-        <label for="number4">Number of Guests</label><br/>
-        <button type="button" class="counter-minus btn btn-primary"> - </button>
-        <input type="text" name="number4" id="number4" value="0">
-            <button type="button" class="counter-plus btn btn-primary"> + </button>
+    <div class="tm-num2" id="handleCounter2">      
+        <label for="number2">Number of Guests</label><br/>
+        <button type="button" class="counter-minus btn btn-primary">-</button>
+        <input type="text" name="number2" id="number2" value="0">
+            <button type="button" class="counter-plus btn btn-primary">+</button>
             </div>
     </div>
-</section>
         
         <div class="vertical-line"> </div> 
         
@@ -121,14 +77,13 @@
    <div class="tm-cl">
         <label for="date1" class="arrival">Visiting Dates </label>
 
-     <input type="text" name="date1" class="range" readonly="readonly"> 
+     <input type="text" id="date1" name="date1" class="range" readonly="readonly">
         
 
-     <a href="createprofile.html"><input type="button" id="sub" value="Proceed"></a>
+     <a href="roomschoice.html"><input type="button" id="sub" value="Proceed"></a>
     </div>
     </div>
         </form>
-
   </section>
     
     
@@ -165,3 +120,4 @@
     
 </html>
     
+

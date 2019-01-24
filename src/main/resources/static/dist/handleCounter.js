@@ -17,7 +17,7 @@
         $btnPlugs = $handleCounter.find('.counter-plus')
         var defaultOpts = {
             writable: true,
-            minimum: 1,
+            minimum: 0,
             maximize: null,
             onChange: function(){},
             onMinimum: function(){},

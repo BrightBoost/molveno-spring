@@ -9,7 +9,7 @@
     display: block;
     padding: 20px;
     margin-left:79%;
-    
+
 }
 
 
@@ -35,9 +35,9 @@
    max-width: 90%;
        border: 2px solid #3a382e;
     display: block;
-  
+
     margin: 5px auto 5px auto;
-  
+
 }
 
 .tm-nav div
@@ -48,8 +48,8 @@
 }
 
 .tm-nav div ul li{
-    display:inline-block;  
-   
+    display:inline-block;
+
 }
 
 
@@ -59,11 +59,11 @@
     text-decoration: none;
     color: rgb(12, 9, 9);
     line-height: 50px;
-    
-    
+
+
 }
 .tm-nav div ul li a:hover{
-    
+
     color: #5BC0BE;
 }
 
@@ -84,22 +84,22 @@
 .tm-sliderimage{
     width: 100%;
    display: block;
-   
-   
+
+
 }
 .bold{
     padding-bottom: 5px;
-    font-size: 3vw;  
+    font-size: 3vw;
     font-weight: 900;
 }
 .simple{
-    font-size: 2.5vw;  
+    font-size: 2.5vw;
 }
 
 .tm-slidertext{
- position: absolute; 
-   top: 30%; 
-  left: 50%;     
+position: absolute;
+   top: 30%;
+  left: 50%;
     color: #fff;
 }
 
@@ -135,7 +135,7 @@
     text-align: center;
 padding: 5%;
 
-  
+
 }
 
 .tm-rooms a{
@@ -162,7 +162,7 @@ padding: 5%;
 .tm-service{
     max-width: 30%;
     width: 30%;
-    margin: 1.5% 12% 1.5% 10%;  
+   margin: 1.5% 12% 1.5% 10%;
 }
 
 .tm-servicesection{
@@ -188,7 +188,7 @@ padding-bottom: 10%;
 
 .tm-service p{
     font-size: 1.5vmax;
-    
+
 }
 .tm-service .b{
     padding-bottom: 2%;
@@ -203,7 +203,7 @@ padding-bottom: 10%;
 .tm-review{
     background: #353535;
     padding-bottom: 5%;
-    
+
 }
 
 .tm-review::after{
@@ -232,14 +232,14 @@ padding-bottom: 10%;
 .tm-rev{
     padding: 3% 0 0% 5%;
    max-width: 70%;
- 
+
 }
 
 
 
 
 .tm-stars{
- display: block;
+display: block;
     padding-left: 5%;
 }
 .tm-stars img{
@@ -266,7 +266,7 @@ padding-bottom: 10%;
     color: #fff;
     font-weight: 700;
     border: 1px solid #fff;
-   
+
 }
 .tm-resbutton a{
      text-decoration: none;
@@ -286,7 +286,6 @@ padding-bottom: 10%;
     display: block;
     padding: 20px;
     position: relative;
-
 }
 
 .tm-us{
@@ -318,14 +317,14 @@ padding-bottom: 10%;
 .tm-media{
    display: inline;
     margin: 0 0 0 59%;
- 
+
 
 }
 .tm-media img{
   margin: 0.5%;
     width: 3%;
     height: auto;
-    
+
 }
 
 .tm-up
@@ -335,7 +334,7 @@ padding-bottom: 10%;
     right: 3%;
     width: 3%;
     height: auto;
-    
+
 }
 
 .tm-review:focus{
@@ -369,7 +368,7 @@ padding-bottom: 10%;
 
 .tm-exp1, .tm-exp2{
     background: #1C2541;
-    
+
 }
 
 .tm-exp1::after{
@@ -409,7 +408,7 @@ padding-bottom: 10%;
     max-width: 60%;
     width: 60%;
     height: auto;
-    
+
 }
 
 .tm-exp2 img{
@@ -418,7 +417,7 @@ padding-bottom: 10%;
     max-width: 60%;
     width: 60%;
     height: auto;
-    
+
 }
 
 
@@ -440,14 +439,14 @@ padding-bottom: 10%;
     max-width: 33.33333%;
     width: 33.333333%;
     background: #353535;
-    
+
 display: inline-block;
     margin: 0px;
     position: relative;
 }
 
-.tm-room1 p{
-    font-size: 2.5vw;
+.tm-room1 p {
+    font-size: 1vw;
     color: #fff;
     text-align: center;
     padding: 5%;
@@ -457,20 +456,21 @@ display: inline-block;
 
 
 .tm-roomimage{
-    max-width: 100%;
-    width: 100%;    
+    max-height: 100%;
+    max-width: 100%;;
+    margin: 10%;
 }
 
 .tm-trans{
-    display: inline-block;
+    display: flex;
     position: absolute;
-    top: 78%; /*78*/
+    top: 78%; 
    color: #fff;
      max-width: 100%;
     width: 100%;
-    height: 0%; /*0*/
+    height: 0%; 
      background: rgba(53, 53, 53,0.7);
-    opacity: 0; /*0*/
+    opacity: 0; 
 }
 
 .tm-trans p{
@@ -489,14 +489,12 @@ display: inline-block;
 
 }
 
-
 .tm-room1:hover .tm-trans{
- 
+
     top:30%;
-   
     transition: top 1s, opacity 1s, height 1s;
        opacity: 1;
-     height: 50%;
+     height: 40%;
     z-index: 1;
 }
 
@@ -509,19 +507,16 @@ display: inline-block;
      background: #353535;
     position: relative;
 }
-.tm-form1 {
-   
+.tm-form1, .tm-form2{
+
     padding: 2% 5%;
-    
-}
-.tm-form2{
-    padding: 1% 5%;
+
 }
 
- div.vertical-line{
-      width: 0.15%; 
-      background-color:  #5BC0BE; 
-      height: 90%; 
+div.vertical-line{
+      width: 0.15%;
+      background-color:  #5BC0BE;
+      height: 90%;
       position: absolute;
          top: 6%;
     left: 50%;
@@ -529,28 +524,19 @@ display: inline-block;
 
 .tm-form1{
     float:left;
-/*
     max-width: 39.5%;
     width: 39.5%;
-*/
-    
-     max-width: 40%;
+    max-width: 40%;
     width: 40%;
-    
-    
 }
 
 .tm-form2{
     float:right;
-/*
     max-width: 39.5%;
     width: 39.5%;
-*/
-    
-    
      max-width: 40%;
     width: 40%;
-   
+
 }
 
 input, select, textarea,
@@ -589,13 +575,13 @@ input[type=text]:nth-child(1),input[type=email],textarea{
     margin: 5%;
     padding: 1% 3%;
     width: 80%;
-   
+
 }
 
 textarea {
     max-width: 80% ;
     resize: none;
-    
+
 }
 
 #rooms{
@@ -608,23 +594,25 @@ textarea {
 #inlinelable{
     display: inline-block;
     margin: 5%;
-    
+
 }
 
 
 
 
-.tm-num1, .tm-num2, .tm-num3, .tm-num4{
-    display: contents;
+.tm-num1, .tm-num2{
+    display: inline-block;
+
     max-width: 39%;
     width: 39%;
-    margin: auto;
+    margin: 5%;
 }
 
-#number1 , #number2, #number3, #number4{
-    width:20%;
+#number1 , #number2{
+    width:30%;
     padding: 3% 8%;
     margin-top: 5%;
+
     text-align: center;
 }
 
@@ -645,7 +633,7 @@ input[type=submit]{
      color: #fff;
     border: 1px solid #fff;
 
- 
+
 
 }
 
@@ -655,7 +643,7 @@ input[type=submit]{
 
 #sub2{
      margin-left: 5%;
-  
+
 }
 
 input[type=submit]:hover{
@@ -709,7 +697,7 @@ input[type=submit]:focus{
     padding-left: 2%;
     padding-right: 2%;
      opacity:0;
-   
+
 }
 
 .left:hover, .right:hover{
@@ -735,8 +723,8 @@ input[type=submit]:focus{
 
 
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -753,14 +741,5 @@ input[type=submit]:focus{
     font-size: 1.5vw;
         width: 1.5%;
         text-align: center;
-    
+
 }
-
-
-
-
-
-
-
-
-

@@ -90,8 +90,17 @@
         }
         
         /* Add padding to containers */
+        .tm-header{
+
+        }
+
+        .profile-container {
+     display: flex;
+     margin-top: -25%;
+     }
         .container {
-          padding: 7%;
+        margin: 5%;
+          padding: 20%;
           background-color: white;
         }
         
@@ -166,11 +175,13 @@
     margin: 0 auto;
     width: 35%;
 }
+
+
         </style>
         </head>
         <body>
         
-        <form action="/action_page.php">
+        <form class ="profile-container" action="/action_page.php">
           <div class="container">
               <header class="tm-header">
                 <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Molveno Hotel"></a>
@@ -189,9 +200,6 @@
             
             <label for="address"><b>Address</b></label>
             <input type="text" placeholder="Address" name="psw-repeat" required>
-
-            <label for="nationality"><b>Nationality</b></label>
-            <input type="text" placeholder="Nationality" name="psw-repeat" required>
             
             <label for="phone"><b>Telephone Number</b></label>
             <input type="text" placeholder="Telephone Number" name="psw-repeat" required>
