@@ -11,16 +11,15 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
-     <script type="text/javascript" src="dist/demo.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+
     <style type="text/CSS">
-    
-
-
-
     </style>
     
     </head>
-
 <body>
     <header class="tm-header">
         <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Majestic Hotel"></a>
@@ -37,57 +36,85 @@
             </div>
         </nav>
     </header>
+    <section class="tm-main">
+            <p>Choose a Room</p>
+        </section>
+        <section class="tm-roomsection">
+            <div class="tm-room1">
+                <div class="tm-trans"> <div><p>2 Bed</p><p>Free wifi</p><p>Fresh towels</p> </div>
+    
+                    <div><p>Only for</p><p class="bold">€ 139.99</p> </div></div>
     
     
+                <img class="tm-roomimage" src="images/luxuryroom.png">
+                <p class="s">Luxury Room</p>
+                <div class="tm-num1" id="handleCounter2">
+                    <label for="number1" >Number of Luxury Rooms</label><br/>
+                    <button type="button" class="counter-minus btn btn-primary">- </button>
+                    <input type="text" name="number1" id="number1" value="0">
+                    <button type="button" class="counter-plus btn btn-primary">+  </button>
+                </div>
+            </div>
+            <div class="tm-room1">
+                <div class="tm-trans"> <div><p>2 Bed</p><p>Fresh towels</p></div>
+    
+                    <div><p>Only for</p><p class="bold">€ 99.99</p> </div></div>
+    
+    
+                <img class="tm-roomimage" src="images/deluxroom.png">
+                <p>Standard Room</p>
+                    <div class="tm-num1" id="handleCounter3">
+                    <label for="number1" >Number of Standard Rooms</label><br/>
+                    <button type="button" class="counter-minus btn btn-primary">- </button>
+                    <input type="text" name="number1" id="number1" value="0">
+                    <button type="button" class="counter-plus btn btn-primary">+  </button>
+                </div>
+            </div>
+            <div class="tm-room1">
+    
+                <div class="tm-trans"> <div><p>1 Bed</p><p>Fresh towels</p></div>
+    
+                    <div><p>Only for</p><p class="bold">€ 79.99</p> </div></div>
+    
+    
+                <img class="tm-roomimage" src="images/premiumroom.png">
+                <p>Budget Room</p>
+                <div class="tm-num1" id="handleCounter4">
+                    <label for="number1" >Number of Budget Rooms</label><br/>
+                    <button type="button" class="counter-minus btn btn-primary">- </button>
+                    <input type="text" name="number1" id="number1" value="0">
+                    <button type="button" class="counter-plus btn btn-primary">+  </button>
+                </div>
+            </div>
+            </div>
+        </section>
     <section class="tm-main">
            <p>Booking</p>
     </section>
-    
-    
-    
     <section class="tm-booking">
-    
-    <form>
+        <form>
         <div class="tm-form1">
-    <!-- <input type="text" name="name" placeholder="Name">  
-    <input type="email" name="email" placeholder="E-mail">  -->
-    <!-- <label  for="rooms" id="inlinelable">Rooms</label>
-    <select name="Rooms" id="rooms">
-        <option value="Luxuryr">Luxury Room € 139.99</option>
-        <option value="deluxs">Standard Room € 99.99</option>
-        <option value="premierr">Budget Room € 79.99</option>
-    </select>  -->
-
-    <div class="tm-num1" id="handleCounter1">    
-    <label for="number1" >Number of Rooms</label><br/>
-        <button type="button" class="counter-minus btn btn-primary">- </button>
-        <input type="text" name="number1" id="number1" value="0">
-         <button type="button" class="counter-plus btn btn-primary">+  </button>
-        </div>
-    <div class="tm-num2" id="handleCounter2">      
+    <div class="tm-num2" id="handleCounter1">      
         <label for="number2">Number of Guests</label><br/>
         <button type="button" class="counter-minus btn btn-primary">-</button>
         <input type="text" name="number2" id="number2" value="0">
             <button type="button" class="counter-plus btn btn-primary">+</button>
             </div>
     </div>
-        
-        <div class="vertical-line"> </div> 
-        
+        <div class="vertical-line"></div>
     <div class="tm-form2">
    <div class="tm-cl">
         <label for="date1" class="arrival">Visiting Dates </label>
-
      <input type="text" id="date1" name="date1" class="range" readonly="readonly">
-        
-
-     <a href="roomschoice.html"><input type="button" id="sub" value="Proceed"></a>
+     <a href="signup.html"><input type="button" id="sub" value="Proceed"></a>
     </div>
     </div>
         </form>
   </section>
-    
-    
+    <section class="tm-makeres">
+        <div class="tm-res">
+        </div>
+    </section>
     <footer class="tm-footer">
         <div class="tm-us">
         <p class="bold">About Us</p>
