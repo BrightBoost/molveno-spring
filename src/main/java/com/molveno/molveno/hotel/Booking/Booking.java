@@ -33,7 +33,6 @@ public class Booking {
     @Column
     private long guestId;
 
-
     public long getId() {
         return id;
     }
