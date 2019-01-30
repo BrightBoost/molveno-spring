@@ -1,36 +1,43 @@
 package com.molveno.molveno.hotel.room;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="roomtype")
 public class RoomType {
-    private final String budget = "Budget";
-    private final String standard = "Standard";
-    private final String luxury = "Luxury";
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Access(AccessType.PROPERTY)
+    private long id;
 
-    private final double budgetPrice = 80.00;
-    private final double standardPrice = 100.00;
-    private final double luxuryPrice = 140.00;
+    @Column
+    private String name;
 
-    public String getBudget() {
-        return budget;
+    @Column(name = "price")
+    private double price;
+
+    public long getId() {
+        return id;
     }
 
-    public String getStandard() {
-        return standard;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getLuxury() {
-        return luxury;
+    public String getName() {
+        return name;
     }
 
-    public double getBudgetPrice() {
-        return budgetPrice;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getStandardPrice() {
-        return standardPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public double getLuxuryPrice() {
-        return luxuryPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
