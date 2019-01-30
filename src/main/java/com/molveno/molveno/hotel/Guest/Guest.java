@@ -1,45 +1,101 @@
 package com.molveno.molveno.hotel.Guest;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Guest")
 public class Guest {
-    private String name, email, phone, address, country, nationality;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Access(AccessType.PROPERTY)
+    @Column
+    private long id;
 
-    public String getName() {
+    @Column(name = "firstname")
+    private String firstname;
+    @Column(name = "lastname")
+    private String lastname;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "password")
+    private String password;
 
-        return name;
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "postcode")
+    private String postcode;
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "housenumber")
+    private String housenumber;
+
+    public long getId() {
+        return id;
     }
 
-    public void setName(String name) {
+    public void setId(long id) {
+        this.id = id;
+    }
 
-        this.name = name;
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
-
         return email;
     }
 
     public void setEmail(String email) {
-
         this.email = email;
     }
 
-    public String getPhone()
-    {
+    public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
-
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
     public String getCountry() {
@@ -50,11 +106,11 @@ public class Guest {
         this.country = country;
     }
 
-    public String getNationality() {
-        return nationality;
+    public String getHousenumber() {
+        return housenumber;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
+    public void setHousenumber(String housenumber) {
+        this.housenumber = housenumber;
     }
 }

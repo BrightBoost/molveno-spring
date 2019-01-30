@@ -14,9 +14,7 @@ $(function ($) {
     maximize: 100,
              
            })
-       
-     
-       
+
        });
       
    
