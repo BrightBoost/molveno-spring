@@ -1,21 +1,22 @@
 package com.molveno.molveno.hotel.room;
 
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="roomtype")
+@Table(name = "Roomtype")
 public class RoomType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Access(AccessType.PROPERTY)
+    @Column
     private long id;
 
-    @Column
-    private String name;
+    @Column(name = "roomtype")
+    private String roomType;
 
-    @Column(name = "price")
-    private double price;
+    @Column(name = "roomprice")
+    private double roomPrice;
 
     public long getId() {
         return id;
@@ -25,19 +26,19 @@ public class RoomType {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoomType() {
+        return roomType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
-    public double getPrice() {
-        return price;
+    public double getRoomPrice() {
+        return roomPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setRoomPrice(double roomPrice) {
+        this.roomPrice = roomPrice;
     }
 }

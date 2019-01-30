@@ -1,28 +1,17 @@
-package com.molveno.molveno.hotel;
-
-
-import com.molveno.molveno.hotel.Guest.Guest;
-import com.molveno.molveno.hotel.room.Room;
-import com.molveno.molveno.hotel.Booking.Booking;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
-
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.*;
-
-@EnableAutoConfiguration
-@EnableJpaRepositories
-@SpringBootApplication
-public class Main {
-    public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
-    }
-
-}
+//package com.molveno.molveno.hotel;
+//
+//
+//import com.molveno.molveno.hotel.Guest.Guest;
+//import com.molveno.molveno.hotel.room.Room;
+//import com.molveno.molveno.hotel.Booking.Booking;
+//
+//
+//import java.time.LocalDate;
+//import java.time.Month;
+//import java.util.*;
+//
+//public class Main {
+//
 //    public static void main(String[] args) {
 //
 //
