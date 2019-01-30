@@ -29,6 +29,7 @@ public class GuestController {
     @RequestMapping(value = "/edit-guest", method = RequestMethod.POST, consumes = "application/json")
     public void editGuest(@RequestBody Guest guest){
         Guest guest1 = guestRepository.findById(guest.getId());
+
         guest1.setFirstname(guest.getFirstname());
         guest1.setLastname(guest.getLastname());
         guest1.setEmail(guest.getEmail());
