@@ -13,23 +13,25 @@ public class Room {
     private long id;
 
     //RoomType roomType;
+    @JoinColumn(name = "roomtypeid",referencedColumnName = "id")
+    @OneToOne
 
-    @Column
-    private long roomTypeID;
+   private RoomType roomType;
 
-    @Column
+    public RoomType getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
+
+    @Column(name = "roomname")
     private String roomName;
 
-    @Column
+    @Column(name = "roomava")
     private boolean roomAvailability;
 
-    public long getRoomTypeID() {
-        return roomTypeID;
-    }
-
-    public void setRoomTypeID(long roomTypeID) {
-        this.roomTypeID = roomTypeID;
-    }
 
     public boolean isRoomAvailability() {
         return roomAvailability;

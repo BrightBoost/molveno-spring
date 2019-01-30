@@ -12,7 +12,8 @@ import java.util.List;
 
 @RestController
 public class RoomController {
-
+@Autowired
+RoomTypeRepository roomTypeRepository;
     @Autowired
     RoomRepository roomRepository;
 
@@ -21,7 +22,7 @@ public class RoomController {
         return roomRepository.findAll();
     }
 
-    @RequestMapping(value = "/add-room" ,method = RequestMethod.POST)
+    @RequestMapping(value = "/add-room" ,method = RequestMethod.POST,consumes = "application/json")
     public void saveRoom(@RequestBody Room room){
         roomRepository.save(room);
     }

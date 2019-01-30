@@ -12,6 +12,8 @@ import java.util.List;
 public class RoomTypeController {
     @Autowired
     RoomTypeRepository roomTypeRepository;
+    @Autowired
+    RoomRepository roomRepository;
 
     @RequestMapping(value = "/get-roomType", method =  RequestMethod.GET)
     public List<RoomType> getRoomsType(){
