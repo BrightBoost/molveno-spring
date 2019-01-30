@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+   height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #5BC0BE;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 25px 8px 6px 16px;
+
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+}
+#a1{
+padding-top: 50px
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+#input1{
+ margin-top: 50px;
+ margin-left: 190px;
+}
+#p1{
+ margin-top: 20px;
+ margin-left: 190px;
+}
+#select{
+ margin-top: 6px;
+ margin-left: 190px;
+}
+#myText{
+ margin-top: 6px;
+ margin-left: 190px;
+}
+#add{
+ margin-top: 10px;
+ margin-left: 190px;
+}
+</style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="admin.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="roomControl.html"><i class="fa fa-building-o"></i> Room control</a>
+
+    </div>
+<div id="input1">
+    <h1>Add room</h1>
+</div>
+    <div id="p1">
+        <p1>Room name</p1>
+
+    </div>
+    <input type="text" id="myText" value="">
+    <div>
+    <section id="select">
+        <p2>Seclect room type</p2>
+        <div>
+            <select>
+                <option value="Standard">Standard</option>
+                <option value="Budget">Budget</option>
+                <option value="Luxury">Luxury</option>
+            </select>
+        </div>
+    </section>
+    <button id="add" onclick="myFunction()">Add</button>
+</div>
+</body>
+</html>
