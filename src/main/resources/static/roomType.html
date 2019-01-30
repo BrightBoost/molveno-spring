@@ -49,8 +49,11 @@ padding-top: 50px
  margin-top: 50px;
  margin-left: 190px;
 }
-#delete{
- margin-top: 10px;
+#category{
+ margin-top: 6px;
+}
+#edit{
+ margin-top: 6px;
  margin-left: 190px;
 }
 </style>
@@ -67,10 +70,11 @@ padding-top: 50px
         <a id="a4" href="roomType.html"><i></i>Room type</a>
     </div>
     <div id="input1">
-        <h1>Delete room</h1>
+        <h1>Room type</h1>
     </div>
     <section id="select">
-        <p>Seclect room to delete</p>
+
+        <p>Seclect room to edit</p>
         <div>
             <select>
                 <option value="volvo">Room 1</option>
@@ -82,8 +86,17 @@ padding-top: 50px
                 <option value="audi">Room 7</option>
             </select>
         </div>
+        <div id="category">
+            <select>
+                <option value="Standard">Standard</option>
+                <option value="Budget">Budget</option>
+                <option value="Luxury">Luxury</option>
+            </select>
+        </div>
     </section>
-    <button id="delete" onclick="myFunction()">Delete</button>
-</div>
+
+    <button id="edit" onclick="myFunction()">Change category</button>
+
+
 </body>
 </html>
