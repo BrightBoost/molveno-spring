@@ -1,12 +1,12 @@
 package com.molveno.molveno.hotel.Booking;
 
+import com.molveno.molveno.hotel.Guest.Guest;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
+import java.awt.print.Book;
 import java.util.List;
 
-@Repository
-public interface BookingRepository extends CrudRepository <Booking, Long>{
+public interface BookingRepository extends CrudRepository<Booking,Long> {
     List<Booking> findAll();
     Booking findById(long id);
 }
