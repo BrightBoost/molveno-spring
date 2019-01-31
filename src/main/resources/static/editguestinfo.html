@@ -8,7 +8,7 @@ body {font-family: "Lato", sans-serif;}
 
 .sidebar {
    height: 100%;
-  width: 200px;
+  width: 160px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -19,7 +19,7 @@ body {font-family: "Lato", sans-serif;}
 }
 
 .sidebar a {
-  padding: 9px 8px 6px 16px;
+  padding: 25px 8px 6px 16px;
 
   text-decoration: none;
   font-size: 20px;
@@ -34,7 +34,6 @@ padding-top: 50px
 }
 
 .main {
-
   margin-left: 200px; /* Same as the width of the sidenav */
   padding: 0px 10px;
 }
@@ -43,23 +42,59 @@ padding-top: 50px
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-
 </style>
 </head>
 <body>
-<section>
+
 <div class="sidebar">
     <!--<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>-->
-    <a id="a1" href="roomControl.html"><i class="fa fa-fw fa-wrench"></i>Room Control</a>
-    <a id="a2" href="editguestinfo.html"><i class="fa fa-fw fa-user"></i>Edit Guest Info</a>
-</div>
-</section>
-<section>
-<div class="main">
-  <h2>Welcome to hotel management</h2>
-</section>
+    <a href="admin.html"><i class="fa fa-fw fa-home"></i> Home</a>
 </div>
 
+
+<div class="main">
+    <h2></h2>
+
+</div>
+
+<style>
+body{
+margin-left: 15%;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Guest info Table</h2>
+
+<table>
+    <tr>
+        <th id="id">ID</th>
+        <th id="guestName">First name</th>
+        <th id="guestLastName">Last name</th>
+        <th id="guestEmail">Email</th>
+        <th id="guestPassword">Password</th>
+        <th id="guestPostcode">postcode</th>
+        <th id="guestStreet">Street</th>
+        <th id="guestCity">City</th>
+        <th id="guestCountry">Country</th>
+        <th id="guestPhone">Phone</th>
+    </tr></table>
 
 </body>
 </html>
