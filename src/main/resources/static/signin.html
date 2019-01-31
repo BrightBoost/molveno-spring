@@ -35,6 +35,20 @@
           background-color: #ddd;
           outline: none;
         }
+
+        input[type=email], input[type=email] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+
+        input[type=email]:focus, input[type=email]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
         
         /* Overwrite default styles of hr */
         hr {
@@ -104,10 +118,10 @@
             <hr>
             
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Email" name="Email" required>
+            <input type="email" placeholder="default@example.com" name="Email" required>
 
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="password" name="password" required>
+            <input type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" name="password" required>
             <button type="submit" class="signUpbtn">Sign In</button>
             <p id="or">Back to booking page? <a href="bb.html">Booking</a>.</p>
           </div>
