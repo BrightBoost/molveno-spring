@@ -107,19 +107,14 @@
     width: 35%;
 }
         </style>
-        </head>
         <body>
-        
         <form action="/action_page.php">
           <div class="container">
-              <header class="tm-header">
+              <header class="tm-header"></header>
                 <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Molveno Hotel"></a>
             <h1>Sign In</h1>
-            <hr>
-            
             <label for="email"><b>Email</b></label>
             <input type="email" placeholder="default@example.com" name="Email" required>
-
             <label for="password"><b>Password</b></label>
             <input type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" name="password" required>
             <button type="submit" class="signUpbtn">Sign In</button>
