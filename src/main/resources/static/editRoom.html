@@ -3,6 +3,56 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Adding Room</title>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $.ajax({
+            url:"http://localhost:8080/get-roomType",
+            type:"get",
+            success: function (x){
+                $.each(x,function(i,obj){
+                    var div_x="<option value="+obj.id +">" + obj.roomType + " " + obj.roomPrice + "</option>"
+                    $(div_x).appendTo('#roomType');
+                })
+            }
+        });
+        $.ajax({
+            url:"http://localhost:8080/get-room",
+            type:"get",
+            success: function (x){
+                $.each(x,function(i,obj){
+                    var div_x="<option value="+obj.id +">" + obj.roomName + "</option>"
+                    $(div_x).appendTo('#rooms');
+                })
+            }
+        });
+        })
+
+        function editRoom(){
+        var roomName = $("#editRoomName").val();
+        var roomTypeId = $("#roomType option:selected").val();
+        var roomId =$("#rooms").val();
+        var object = {
+        "id":roomId,
+        "roomName" :roomName,
+        "roomType" : {"id":roomTypeId
+        }
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/edit-room",
+            type:"post",
+               data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+        })
+        }
+    </script>
+
     <style>
 body {font-family: "Lato", sans-serif;}
 
@@ -76,27 +126,20 @@ padding-top: 50px
 
         <p id="p1">Seclect room to edit</p>
         <div>
-            <select>
-                <option value="volvo">Room 1</option>
-                <option value="saab">Room 2</option>
-                <option value="opel">Room 3</option>
-                <option value="audi">Room 4</option>
-                <option value="audi">Room 5</option>
-                <option value="audi">Room 6</option>
-                <option value="audi">Room 7</option>
+            <select id="rooms">
+
             </select>
+            <input type="text" id="editRoomName" value="">
         </div>
         <div id="category">
-            <select>
-                <option value="Standard">Standard</option>
-                <option value="Budget">Budget</option>
-                <option value="Luxury">Luxury</option>
+            <select id="roomType">
+
             </select>
         </div>
     </section>
 
-    <button id="edit" onclick="myFunction()">Change category</button>
+    <button type="button" id="edit" onclick="editRoom()">Change category</button>
 
-
+</div>
 </body>
 </html>

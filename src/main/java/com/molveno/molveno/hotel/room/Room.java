@@ -12,31 +12,23 @@ public class Room {
     @Access(AccessType.PROPERTY)
     private long id;
 
-    //RoomType roomType;
+    @JoinColumn(name = "roomtypeid",referencedColumnName = "id")
+    @OneToOne
+    private RoomType roomType;
 
-    @Column
-    private long roomTypeID;
-
-    @Column
+    @Column(name = "roomname")
     private String roomName;
 
-    @Column
-    private boolean roomAvailability;
+    @Column(name = "roomava")
+    private boolean roomBooked;
 
-    public long getRoomTypeID() {
-        return roomTypeID;
+
+    public boolean isRoomBooked() {
+        return roomBooked;
     }
 
-    public void setRoomTypeID(long roomTypeID) {
-        this.roomTypeID = roomTypeID;
-    }
-
-    public boolean isRoomAvailability() {
-        return roomAvailability;
-    }
-
-    public void setRoomAvailability(boolean roomAvailability) {
-        this.roomAvailability = roomAvailability;
+    public void setRoomBooked(boolean roomBooked) {
+        this.roomBooked = roomBooked;
     }
 
 
@@ -57,7 +49,11 @@ public class Room {
         this.id = id;
     }
 
+    public RoomType getRoomType() {
+        return roomType;
+    }
 
-
-
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
 }

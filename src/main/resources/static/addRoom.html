@@ -3,6 +3,50 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Adding Room</title>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $.ajax({
+            url:"http://localhost:8080/get-roomType",
+            type:"get",
+            success: function (x){
+                $.each(x,function(i,obj){
+                    var div_x="<option value="+obj.id +">" + obj.roomType + " " + obj.roomPrice + "</option>"
+                    $(div_x).appendTo('#roomType');
+                })
+            }
+        });
+
+        })
+
+        function saveRoom(){
+        var roomName = $("#editRoomName").val();
+        var roomTypeId = $("#roomType option:selected").val();
+        var object = {
+        "roomName" :roomName,
+        "roomType" : {"id":roomTypeId
+
+        }
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/add-room",
+            type:"post",
+               data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+
+        })
+
+        }
+
+
+    </script>
     <style>
 body {font-family: "Lato", sans-serif;}
 
@@ -54,7 +98,7 @@ padding-top: 50px
  margin-top: 6px;
  margin-left: 190px;
 }
-#myText{
+#editRoomName{
  margin-top: 6px;
  margin-left: 190px;
 }
@@ -63,6 +107,7 @@ padding-top: 50px
  margin-left: 190px;
 }
 </style>
+
 </head>
 <body>
 <div class="sidebar">
@@ -80,19 +125,17 @@ padding-top: 50px
         <p1>Room name</p1>
 
     </div>
-    <input type="text" id="myText" value="">
+    <input type="text" id="editRoomName" value="">
     <div>
     <section id="select">
         <p2>Seclect room type</p2>
         <div>
-            <select>
-                <option value="Standard">Standard</option>
-                <option value="Budget">Budget</option>
-                <option value="Luxury">Luxury</option>
+            <select id="roomType">
+
             </select>
         </div>
     </section>
-    <button id="add" onclick="myFunction()">Add</button>
+    <button type="button" id="add" onclick="saveRoom()">Add</button>
 </div>
 </body>
 </html>

@@ -6,3 +6,4 @@ INSERT INTO Guest (firstname , lastname , email,phone,password,street,postcode,c
 INSERT INTO Guest (firstname , lastname , email,phone,password,street,postcode,country,housenumber ) VALUES ('Mohamads','Aezs','mohamassd@gmail.com','087776','2222','kesaes','1096MS','Nederland','6as66');
 INSERT INTO Guest (firstname , lastname , email,phone,password,street,postcode,country,housenumber ) VALUES ('Mohasdamad','Aessaz','mohassmad@gmasail.com','087776','2222','keases','109as6MS','Nedeasrland','666');
 
+insert into Room (roomtypeid,roomname,roomava) values ('1','room1','true')
