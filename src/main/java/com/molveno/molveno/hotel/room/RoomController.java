@@ -31,6 +31,20 @@ RoomTypeRepository roomTypeRepository;
     public void editRoom(@RequestBody Room room){
         Room room1 =roomRepository.findById(room.getId());
         room1.setRoomName(room.getRoomName());
+        room1.setId(room.getId());
+       room1.setRoomType(room.getRoomType());
+
+long s=room.getRoomType().getId();
+RoomType a = room.getRoomType();
+a.setId(s);
+
+       // roomTypeRepository.save(a);
+        //room1.setRoomType(a);
+room1.setRoomType(a);
+
+
+
+
         roomRepository.save(room1);
     }
     @RequestMapping(value = "/delete-room", method = RequestMethod.POST, consumes = "application/json")

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <title>Title</title>
+    <title>Adding Room</title>
     <script type="text/javascript">
     $(document).ready(function(){
 
@@ -14,7 +14,7 @@
             type:"get",
             success: function (x){
                 $.each(x,function(i,obj){
-                    var div_x="<option value=" + obj.id +">" + obj.roomType + " " + obj.roomPrice + "</option>"
+                    var div_x="<option value="+obj.id +">" + obj.roomType + " " + obj.roomPrice + "</option>"
                     $(div_x).appendTo('#roomType');
                 })
             }
@@ -24,10 +24,12 @@
 
         function saveRoom(){
         var roomName = $("#editRoomName").val();
-        var roomType = $("#roomType option:selected").val();
+        var roomTypeId = $("#roomType option:selected").val();
         var object = {
         "roomName" :roomName,
-        "roomType" : roomType
+        "roomType" : {"id":roomTypeId
+
+        }
         };
         var jsonObject = JSON.stringify(object);
 
