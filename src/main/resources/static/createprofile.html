@@ -14,19 +14,25 @@
 
     function saveGuest(){
         var guestName = $("#guestName").val();
-        var roomTypeId = $("#roomType option:selected").val();
-        var object = {
-        "roomName" :roomName,
-        "roomType" : {"id":roomTypeId
+        var lastName = $("#guestLastName").val();
+        var email = $("#guestEmail").val();
+        var password = $("#guestPassword").val();
+        var postcode = $("#guestPostcode").val();
+        var street = $("#guestStreet").val();
+        var city = $("#guestCity").val();
+        var country = $("#guestCountry").val();
+        var country = $("#guestPhone").val();
 
-        }
+        var object = {
+        "roomType" :roomTypeName,
+        "roomPrice" : roomTypePrice
         };
         var jsonObject = JSON.stringify(object);
 
         $.ajax({
-            url:"http://localhost:8080/add-room",
+            url:"http://localhost:8080/add-roomType",
             type:"post",
-               data: jsonObject,
+              data: jsonObject,
               contentType:"application/json;",
               dataType: "application/json",
               success: alert("success")

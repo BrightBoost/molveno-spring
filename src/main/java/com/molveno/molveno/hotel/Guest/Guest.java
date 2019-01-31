@@ -12,28 +12,24 @@ public class Guest {
     @Column
     private long id;
 
-    @Column(name = "firstname")
-    private String firstname;
-    @Column(name = "lastname")
-    private String lastname;
+    @Column(name = "firstName")
+    private String firstName;
+    @Column(name = "lastName")
+    private String lastName;
     @Column(name = "email")
     private String email;
     @Column(name = "phone")
     private String phone;
     @Column(name = "password")
     private String password;
-
     @Column(name = "street")
     private String street;
-
     @Column(name = "postcode")
     private String postcode;
     @Column(name = "country")
     private String country;
-
-    @Column(name = "housenumber")
-    private String housenumber;
-
+    @Column(name = "houseNumber")
+    private String houseNumber;
     public long getId() {
         return id;
     }
@@ -42,20 +38,20 @@ public class Guest {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -106,11 +102,11 @@ public class Guest {
         this.country = country;
     }
 
-    public String getHousenumber() {
-        return housenumber;
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
-    public void setHousenumber(String housenumber) {
-        this.housenumber = housenumber;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 }
