@@ -349,13 +349,13 @@ display: block;
 /* Explore page */
 
 .tm-main{
-      background: #5BC0BE;
+    background: #5BC0BE;
     padding: 2%;
 }
 
 .tm-main p{
     display: table;
-    max-width: 30%;
+    max-width: 50%;
     margin: 0 auto;
     font-size: 4vw;
      padding: 2%;
@@ -507,16 +507,14 @@ display: inline-block;
      background: #353535;
     position: relative;
 }
-.tm-form1, .tm-form2{
-
-    padding: 2% 5%;
-
+.tm-form1{
+    padding: 2% 10%;
 }
 
 div.vertical-line{
       width: 0.15%;
       background-color:  #5BC0BE;
-      height: 90%;
+      height: 50%;
       position: absolute;
          top: 6%;
     left: 50%;
@@ -600,9 +598,8 @@ textarea {
 
 
 
-.tm-num1, .tm-num2{
+.tm-num1 {
     display: inline-block;
-
     max-width: 39%;
     width: 39%;
     margin: 5%;
