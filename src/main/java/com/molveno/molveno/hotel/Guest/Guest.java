@@ -12,24 +12,26 @@ public class Guest {
     @Column
     private long id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     private String firstName;
-    @Column(name = "lastName")
+    @Column(name = "lastname")
     private String lastName;
     @Column(name = "email")
     private String email;
-    @Column(name = "phone")
-    private String phone;
     @Column(name = "password")
     private String password;
     @Column(name = "street")
     private String street;
+    @Column(name = "housenumber")
+    private String houseNumber;
     @Column(name = "postcode")
     private String postcode;
+    @Column (name = "city")
+    private String city;
     @Column(name = "country")
     private String country;
-    @Column(name = "houseNumber")
-    private String houseNumber;
+    @Column(name = "phone")
+    private String phone;
     public long getId() {
         return id;
     }
@@ -62,14 +64,6 @@ public class Guest {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -84,6 +78,21 @@ public class Guest {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getPostcode() {
@@ -101,12 +110,11 @@ public class Guest {
     public void setCountry(String country) {
         this.country = country;
     }
-
-    public String getHouseNumber() {
-        return houseNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

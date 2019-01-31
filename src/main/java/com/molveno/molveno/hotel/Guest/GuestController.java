@@ -37,6 +37,7 @@ public class GuestController {
         guest1.setStreet(guest.getStreet());
         guest1.setHouseNumber(guest.getHouseNumber());
         guest1.setPostcode(guest.getPostcode());
+        guest1.setCity(guest.getCity());
         guest1.setCountry(guest.getCountry());
         guestRepository.save(guest1);
     }
