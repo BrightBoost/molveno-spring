@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+
+    function saveGuest(){
+        var guestName = $("#guestName").val();
+        var roomTypeId = $("#roomType option:selected").val();
+        var object = {
+        "roomName" :roomName,
+        "roomType" : {"id":roomTypeId
+
+        }
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/add-room",
+            type:"post",
+               data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+
+        })
+
+        }
+
+    </script>
+
     <style type="text/css">
 
     	.modal-confirm {
@@ -190,31 +218,31 @@
             <hr>
 
             <label for="name"><b>First Name</b></label>
-            <input type="text" placeholder="First Name" name="psw-repeat" required>
+            <input type="text" placeholder="First Name" id="guestName" required>
 
             <label for="name"><b>Last Name</b></label>
-            <input type="text" placeholder="Last Name" name="psw-repeat" required>
+            <input type="text" placeholder="Last Name" id="guestLastName" required>
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Email" id="guestEmail" required>
 
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter password" name="psw-repeat" required>
+            <input type="password" placeholder="Enter password" id="guestPassword" required>
 
             <label for="address"><b>Postcode</b></label>
-            <input type="text" placeholder="Postcode" name="psw-repeat" required>
+            <input type="text" placeholder="Postcode" id="guestPostcode" required>
 
             <label for="address"><b>Street</b></label>
-            <input type="text" placeholder="Street" name="psw-repeat" required>
+            <input type="text" placeholder="Street" id="guestStreet" required>
 
             <label for="address"><b>City</b></label>
-            <input type="text" placeholder="City" name="psw-repeat" required>
+            <input type="text" placeholder="City" id="guestCity" required>
 
             <label for="address"><b>Country</b></label>
-            <input type="text" placeholder="Country" name="psw-repeat" required>
+            <input type="text" placeholder="Country" id="guestCountry" required>
 
             <label for="phone"><b>Telephone Number</b></label>
-            <input type="text" placeholder="Telephone Number" name="psw-repeat" required>
+            <input type="text" placeholder="Telephone Number" id="guestPhone"  required>
 
             <hr>
             <p>By submitting your booking you agree to our <a href="#">Terms & Privacy</a>.</p>
