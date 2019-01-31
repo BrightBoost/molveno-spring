@@ -21,6 +21,67 @@
 
         })
 
+        function deleteRoomType(){
+        var id = $("#types option:selected").val();
+        var object = {
+        "id" : id
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/delete-roomType",
+            type:"post",
+               data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+
+        })
+
+        }
+
+        function editRoomType(){
+        var roomTypeName = $("#typeNewName").val();
+        var roomTypeId = $("#types option:selected").val();
+        var roomTypePrice =$("#typeNewPrice").val();
+        var object = {
+        "id":roomTypeId,
+        "roomType" :roomTypeName,
+        "roomPrice":roomTypePrice
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/edit-roomType",
+            type:"post",
+               data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+        })
+        }
+
+        function saveRoomType(){
+        var roomTypeName = $("#typeNewName").val();
+        var roomTypePrice =$("#typeNewPrice").val();
+        var object = {
+        "roomType" :roomTypeName,
+        "roomPrice" : roomTypePrice
+        };
+        var jsonObject = JSON.stringify(object);
+
+        $.ajax({
+            url:"http://localhost:8080/add-roomType",
+            type:"post",
+              data: jsonObject,
+              contentType:"application/json;",
+              dataType: "application/json",
+              success: alert("success")
+
+        })
+
+        }
+
     </script>
     <style>
 body {font-family: "Lato", sans-serif;}
@@ -107,8 +168,11 @@ padding-top: 50px
         </div>
     </section>
 
-    <button id="edit" onclick="myFunction()">Change category</button>
+    <button id="edit" onclick="editRoomType()">Change Room Type</button>
+    <button id="add" onclick="saveRoomType()">Add New Room Type</button>
+    <button id="delete" onclick="deleteRoomType()">Delete Room Type</button>
 
 
+</div>
 </body>
 </html>

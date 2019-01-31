@@ -12,8 +12,7 @@ import java.util.List;
 public class RoomTypeController {
     @Autowired
     RoomTypeRepository roomTypeRepository;
-    @Autowired
-    RoomRepository roomRepository;
+
 
     @RequestMapping(value = "/get-roomType", method =  RequestMethod.GET)
     public List<RoomType> getRoomsType(){
@@ -32,10 +31,9 @@ public class RoomTypeController {
         roomType1.setRoomPrice(roomType.getRoomPrice());
         roomTypeRepository.save(roomType1);
     }
-    @RequestMapping(value = "/delete-roomType", method = RequestMethod.DELETE, consumes = "application/json")
+    @RequestMapping(value = "/delete-roomType", method = RequestMethod.POST, consumes = "application/json")
     public void deleteRoomType(@RequestBody RoomType roomType){
         roomTypeRepository.deleteById(roomType.getId());
     }
-
 
 }
