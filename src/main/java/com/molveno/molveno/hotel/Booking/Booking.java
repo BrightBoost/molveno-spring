@@ -2,10 +2,12 @@ package com.molveno.molveno.hotel.Booking;
 
 import com.molveno.molveno.hotel.Guest.Guest;
 import com.molveno.molveno.hotel.room.Room;
+import com.molveno.molveno.hotel.room.RoomType;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -18,21 +20,21 @@ public class Booking {
     @Access(AccessType.PROPERTY)
     private long id;
 
-    //Room room;
-    //Guest guest;
 
+    @ManyToMany
+    @JoinTable(name = "roombooking",
+            joinColumns = {@JoinColumn(name = "bookingid")},
+            inverseJoinColumns = {@JoinColumn(name = "roomid")})
+    private List<Room> rooms;
+
+    @JoinColumn(name = "guestid",referencedColumnName = "id")
+    @OneToOne
+    private Guest guest;
 
     @Column
     private LocalDate checkIn;
     @Column
     private LocalDate checkOut;
-
-    @Column
-    private long roomId;
-
-    @Column
-    private long guestId;
-
 
     public long getId() {
         return id;
@@ -42,11 +44,23 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDate getCheckIn() {
-        return checkIn;
+    public List<Room> getRooms() {
+        return rooms;
     }
 
-    public LocalDate getCheckIn(LocalDate date2) {
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public Guest getGuest() {
+        return guest;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
+    public LocalDate getCheckIn() {
         return checkIn;
     }
 
@@ -62,19 +76,5 @@ public class Booking {
         this.checkOut = checkOut;
     }
 
-    public long getRoomId() {
-        return roomId;
-    }
 
-    public void setRoomId(long roomId) {
-        this.roomId = roomId;
-    }
-
-    public long getGuestId() {
-        return guestId;
-    }
-
-    public void setGuestId(long guestId) {
-        this.guestId = guestId;
-    }
 }

@@ -13,6 +13,7 @@ public class RoomTypeController {
     @Autowired
     RoomTypeRepository roomTypeRepository;
 
+
     @RequestMapping(value = "/get-roomType", method =  RequestMethod.GET)
     public List<RoomType> getRoomsType(){
         return roomTypeRepository.findAll();
@@ -34,6 +35,5 @@ public class RoomTypeController {
     public void deleteRoomType(@RequestBody RoomType roomType){
         roomTypeRepository.deleteById(roomType.getId());
     }
-
 
 }

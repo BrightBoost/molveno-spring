@@ -4,17 +4,20 @@
 $(function ($) {
        $('#handleCounter1').handleCounter({
     minimum: 1,
-    maximize: 100,
-   
-           
+    maximize: 100,      
     })
-          
         $('#handleCounter2').handleCounter({
     minimum: 1,
     maximize: 100,
-             
            })
-
+           $('#handleCounter3').handleCounter({
+            minimum: 1,
+            maximize: 100,
+                   })
+                   $('#handleCounter4').handleCounter({
+                    minimum: 1,
+                    maximize: 100,
+                           })
        });
       
    

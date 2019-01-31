@@ -13,27 +13,25 @@ public class Guest {
     private long id;
 
     @Column(name = "firstname")
-    private String firstname;
+    private String firstName;
     @Column(name = "lastname")
-    private String lastname;
+    private String lastName;
     @Column(name = "email")
     private String email;
-    @Column(name = "phone")
-    private String phone;
     @Column(name = "password")
     private String password;
-
     @Column(name = "street")
     private String street;
-
+    @Column(name = "housenumber")
+    private String houseNumber;
     @Column(name = "postcode")
     private String postcode;
+    @Column (name = "city")
+    private String city;
     @Column(name = "country")
     private String country;
-
-    @Column(name = "housenumber")
-    private String housenumber;
-
+    @Column(name = "phone")
+    private String phone;
     public long getId() {
         return id;
     }
@@ -42,20 +40,20 @@ public class Guest {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -64,14 +62,6 @@ public class Guest {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getPassword() {
@@ -89,6 +79,21 @@ public class Guest {
     public void setStreet(String street) {
         this.street = street;
     }
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getPostcode() {
         return postcode;
@@ -105,12 +110,11 @@ public class Guest {
     public void setCountry(String country) {
         this.country = country;
     }
-
-    public String getHousenumber() {
-        return housenumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setHousenumber(String housenumber) {
-        this.housenumber = housenumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
