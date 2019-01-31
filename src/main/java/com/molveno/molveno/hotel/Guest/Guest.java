@@ -12,9 +12,9 @@ public class Guest {
     @Column
     private long id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     private String firstName;
-    @Column(name = "lastName")
+    @Column(name = "lastname")
     private String lastName;
     @Column(name = "email")
     private String email;
@@ -28,7 +28,7 @@ public class Guest {
     private String postcode;
     @Column(name = "country")
     private String country;
-    @Column(name = "houseNumber")
+    @Column(name = "housenumber")
     private String houseNumber;
     public long getId() {
         return id;

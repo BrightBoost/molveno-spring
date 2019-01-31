@@ -15,7 +15,23 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
     <script type="text/javascript" src="dist/demo.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
 
+        $.ajax({
+            url:"http://localhost:8080/get-roomType",
+            type:"get",
+            success: function (x){
+                $.each(x,function(i,obj){
+                    var div_x="<option value="+obj.id +">" + obj.roomType + " " + obj.roomPrice + "</option>"
+                    $(div_x).appendTo('#roomType');
+                })
+            }
+        });
+
+        })
+    </script>
     <style type="text/CSS">
     </style>
     
@@ -51,7 +67,7 @@
                 <div class="tm-num1" id="handleCounter2">
                     <label for="number1" >Number of Luxury Rooms</label><br/>
                     <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
+                    <input type="text" name="number1" id="numberOfLuxuryRoom" value="0">
                     <button type="button" class="counter-plus btn btn-primary">+  </button>
                 </div>
             </div>
@@ -66,7 +82,7 @@
                     <div class="tm-num1" id="handleCounter3">
                     <label for="number1" >Number of Standard Rooms</label><br/>
                     <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
+                    <input type="text" name="number1" id="numberOfStandardRoom" value="0">
                     <button type="button" class="counter-plus btn btn-primary">+  </button>
                 </div>
             </div>
@@ -82,7 +98,7 @@
                 <div class="tm-num1" id="handleCounter4">
                     <label for="number1" >Number of Budget Rooms</label><br/>
                     <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
+                    <input type="text" name="number1" id="numberOfBudgetRoom" value="0">
                     <button type="button" class="counter-plus btn btn-primary">+  </button>
                 </div>
             </div>

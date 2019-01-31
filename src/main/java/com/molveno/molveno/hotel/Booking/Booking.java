@@ -31,9 +31,9 @@ public class Booking {
     @OneToOne
     private Guest guest;
 
-    @Column
+    @Column(name = "checkin")
     private LocalDate checkIn;
-    @Column
+    @Column(name = "checkout")
     private LocalDate checkOut;
 
     public long getId() {
