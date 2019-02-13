@@ -23,13 +23,14 @@ RoomTypeRepository roomTypeRepository;
     }
 
     @RequestMapping(value = "/add-room" ,method = RequestMethod.POST,consumes = "application/json")
-    public void saveRoom(@RequestBody Room room){
+    public Room saveRoom(@RequestBody Room room){
         roomRepository.save(room);
+        return room;
     }
 
     @RequestMapping(value = "/edit-room",method = RequestMethod.POST ,consumes = "application/json")
     public void editRoom(@RequestBody Room room){
-        Room room1 =roomRepository.findById(room.getId());
+        Room room1 = roomRepository.findById(room.getId());
         room1.setRoomName(room.getRoomName());
         room1.setId(room.getId());
         room1.setRoomType(room.getRoomType());
@@ -37,11 +38,8 @@ RoomTypeRepository roomTypeRepository;
         RoomType a = room.getRoomType();
         a.setId(s);
         room1.setRoomType(a);
-
-
-
-
         roomRepository.save(room1);
+
     }
     @RequestMapping(value = "/delete-room", method = RequestMethod.POST, consumes = "application/json")
     public void deleteRoom(@RequestBody Room room){

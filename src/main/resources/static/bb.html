@@ -2,7 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> Molveno Hotel</title>
+    <title>Molveno Hotel</title>
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="dist/pickmeup.min.js"></script>-->
+    <script type="text/javascript" src="dist/handleCounter.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/pickmeup.css">
+    <link rel="stylesheet" type="text/css" href="css/handle-counter.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <!--<script type="text/javascript" src="dist/pickmeup1.js"></script>-->
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="dist/pickmeup.min.js"></script>
     <script type="text/javascript" src="dist/handleCounter.js"></script>
@@ -10,21 +20,68 @@
     <link rel="stylesheet" type="text/css" href="css/handle-counter.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
     <script type="text/javascript" src="dist/demo.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
-    <script type="text/javascript" src="dist/demo.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"
+          rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script>
+                $(document).ready(function () {
+                    $("#txtCheckin").datepicker({
+                        dateFormat: "dd-M-yy",
+                        onSelect: function (date) {
+                            var date2 = $('#txtCheckin').datepicker('getDate');
+                            date2.setDate(date2.getDate());
+                            $('#txtCheckout').datepicker('setDate', date2);
+                            //sets minDate to dateofbirth date + 1
+                            $('#txtCheckout').datepicker('option', 'minDate', date2);
+                        }
+                    });
+                    $('#txtCheckout').datepicker({
+                        dateFormat: "dd-M-yy",
+                        onClose: function () {
+                            var dt1 = $('#txtCheckin').datepicker('getDate');
+                            console.log(dt1);
+                            var dt2 = $('#txtCheckout').datepicker('getDate');
+                            if (dt2 <= dt1) {
+                                var minDate = $('#txtCheckout').datepicker('option', 'minDate');
+                                $('#txtCheckout').datepicker('setDate', minDate);
+                            }
+                        }
+                    });
+                });
+                $(function() {
+            $( "#checkin" ).datepicker({minDate : 0, dateFormat: 'dd-mm-yy'});
+            $("#checkout").attr("disabled", "disabled");
+            $( "#checkout" ).datepicker({minDate:0, dateFormat: 'dd-mm-yy'});
 
-    <style type="text/CSS">
-    </style>
-    
-    </head>
+       $( "#checkin" ).on("change",function(){
+                onCheckin();
+
+             });
+
+         });
+
+          function onCheckin(){
+          if($("#checkin").val() !== ""){
+            $("#checkout").removeAttr("disabled");
+            var dateMin = $('#checkin').datepicker("getDate");
+                var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(), dateMin.getDate() + 1);
+            $("#checkout").datepicker('option', 'minDate', new Date(rMin));
+          }else{
+          $("#checkout").val("");
+          $("#checkout").attr("disabled", "disabled");
+          }
+          }
+
+    </script>
+    <!--<style type="text/CSS"></style>-->
+</head>
 <body>
-    <header class="tm-header">
-        <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Majestic Hotel"></a>
-        <nav class="tm-nav">
-       <div>
+<header class="tm-header">
+    <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Majestic Hotel"></a>
+    <nav class="tm-nav">
+        <div>
             <ul>
                 <li class="tm-list"><a href="index.html">Home</a></li>
                 <li class="tm-list"><a href="explore.html">Explore</a></li>
@@ -32,120 +89,135 @@
                 <li class="tm-list"><a href="bb.html">Booking</a></li>
                 <li class="tm-list"><a href="bb.html">Restaurant</a></li>
                 <li><a href="contact.html">Contact</a></li>
-            </ul>    
-            </div>
-        </nav>
-    </header>
-    <section class="tm-main">
-            <p>Choose a Room</p>
-        </section>
-        <section class="tm-roomsection">
-            <div class="tm-room1">
-                <div class="tm-trans"> <div><p>2 Bed</p><p>Free wifi</p><p>Fresh towels</p> </div>
-    
-                    <div><p>Only for</p><p class="bold">€ 139.99</p> </div></div>
-    
-    
-                <img class="tm-roomimage" src="images/luxuryroom.png">
-                <p class="s">Luxury Room</p>
-                <div class="tm-num1" id="handleCounter2">
-                    <label for="number1" >Number of Luxury Rooms</label><br/>
-                    <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
-                    <button type="button" class="counter-plus btn btn-primary">+  </button>
-                </div>
-            </div>
-            <div class="tm-room1">
-                <div class="tm-trans"> <div><p>2 Bed</p><p>Fresh towels</p></div>
-    
-                    <div><p>Only for</p><p class="bold">€ 99.99</p> </div></div>
-    
-    
-                <img class="tm-roomimage" src="images/deluxroom.png">
-                <p>Standard Room</p>
-                    <div class="tm-num1" id="handleCounter3">
-                    <label for="number1" >Number of Standard Rooms</label><br/>
-                    <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
-                    <button type="button" class="counter-plus btn btn-primary">+  </button>
-                </div>
-            </div>
-            <div class="tm-room1">
-    
-                <div class="tm-trans"> <div><p>1 Bed</p><p>Fresh towels</p></div>
-    
-                    <div><p>Only for</p><p class="bold">€ 79.99</p> </div></div>
-    
-    
-                <img class="tm-roomimage" src="images/premiumroom.png">
-                <p>Budget Room</p>
-                <div class="tm-num1" id="handleCounter4">
-                    <label for="number1" >Number of Budget Rooms</label><br/>
-                    <button type="button" class="counter-minus btn btn-primary">- </button>
-                    <input type="text" name="number1" id="number1" value="0">
-                    <button type="button" class="counter-plus btn btn-primary">+  </button>
-                </div>
-            </div>
-            </div>
-        </section>
-    <section class="tm-main">
-           <p>Booking</p>
-    </section>
-    <section class="tm-booking">
-        <form>
-        <div class="tm-form1">
-    <div class="tm-num2" id="handleCounter1">      
-        <label for="number2">Number of Guests</label><br/>
-        <button type="button" class="counter-minus btn btn-primary">-</button>
-        <input type="text" name="number2" id="number2" value="0">
-            <button type="button" class="counter-plus btn btn-primary">+</button>
-            </div>
-    </div>
-        <div class="vertical-line"></div>
-    <div class="tm-form2">
-   <div class="tm-cl">
-        <label for="date1" class="arrival">Visiting Dates </label>
-     <input type="text" id="date1" name="date1" class="range" readonly="readonly">
-     <a href="signup.html"><input type="button" id="sub" value="Proceed"></a>
-    </div>
-    </div>
-        </form>
-  </section>
-    <section class="tm-makeres">
-        <div class="tm-res">
+            </ul>
         </div>
-    </section>
-    <footer class="tm-footer">
-        <div class="tm-us">
+    </nav>
+</header>
+<section class="tm-main">
+    <p>Choose a Room</p>
+</section>
+<section class="tm-roomsection">
+    <div class="tm-room1">
+        <div class="tm-trans">
+            <div><p>2 Bed</p>
+                <p>Free wifi</p>
+                <p>Fresh towels</p></div>
+
+            <div><p>Only for</p>
+                <p class="bold">€ 139.99</p></div>
+        </div>
+
+
+        <img class="tm-roomimage" src="images/luxuryroom.png">
+        <p class="s">Luxury Room</p>
+        <div class="tm-num1" id="handleCounter2">
+            <label for="number1">Number of Luxury Rooms</label><br/>
+            <button type="button" class="counter-minus btn btn-primary">-</button>
+            <input type="text" name="number1" id="number1" value="0">
+            <button type="button" class="counter-plus btn btn-primary">+</button>
+        </div>
+    </div>
+    <div class="tm-room1">
+        <div class="tm-trans">
+            <div><p>2 Bed</p>
+                <p>Fresh towels</p></div>
+
+            <div><p>Only for</p>
+                <p class="bold">€ 99.99</p></div>
+        </div>
+
+
+        <img class="tm-roomimage" src="images/deluxroom.png">
+        <p>Standard Room</p>
+        <div class="tm-num1" id="handleCounter3">
+            <label for="number1">Number of Standard Rooms</label><br/>
+            <button type="button" class="counter-minus btn btn-primary">-</button>
+            <input type="text" name="number1" id="number1" value="0">
+            <button type="button" class="counter-plus btn btn-primary">+</button>
+        </div>
+    </div>
+    <div class="tm-room1">
+
+        <div class="tm-trans">
+            <div><p>1 Bed</p>
+                <p>Fresh towels</p></div>
+
+            <div><p>Only for</p>
+                <p class="bold">€ 79.99</p></div>
+        </div>
+
+
+        <img class="tm-roomimage" src="images/premiumroom.png">
+        <p>Budget Room</p>
+        <div class="tm-num1" id="handleCounter4">
+            <label for="number1">Number of Budget Rooms</label><br/>
+            <button type="button" class="counter-minus btn btn-primary">-</button>
+            <input type="text" name="number1" id="number1" value="0">
+            <button type="button" class="counter-plus btn btn-primary">+</button>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="tm-main">
+    <p>Booking</p>
+</section>
+<section class="tm-booking">
+    <form>
+        <div class="tm-form1">
+            <div class="tm-num2" id="handleCounter1">
+                <label for="number2">Number of Guests</label><br/>
+                <button type="button" class="counter-minus btn btn-primary">-</button>
+                <input type="text" name="number2" id="number2" value="0">
+                <button type="button" class="counter-plus btn btn-primary">+</button>
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="tm-form2">
+            <div class="tm-cl">
+                <label for="date1" class="arrival">Visiting Dates from Arrival to Departure</label>
+                <br>
+                <p>Check in Date: <input type="text" id="checkin"></p><br>
+                <p>Check out Date: <input type="text" id="checkout"></p>
+
+                <a href="guestinfo.html"><input type="button" id="sub" value="Proceed"></a>
+            </div>
+        </div>
+    </form>
+</section>
+<section class="tm-makeres">
+    <div class="tm-res">
+    </div>
+</section>
+<footer class="tm-footer">
+    <div class="tm-us">
         <p class="bold">About Us</p>
-        <p>We are a part of chain of luxury hotels 
-            which extends all over the world. We 
+        <p>We are a part of chain of luxury hotels
+            which extends all over the world. We
             provide a luxorious stay with various value
             added and free services which will make
-            you visit us over and over again.</p>    
-        </div>
-       
-        <div class="tm-address">
+            you visit us over and over again.</p>
+    </div>
+
+    <div class="tm-address">
         <p class="bold">Address</p>
         <p>Via Bettega, 18, 38018 Molveno TN, Italy<br>
             Phone : (+39) 0461 586934 <br>
-            Email : molveno@info.com</p>        
-        </div>
-        <br/>
+            Email : molveno@info.com</p>
+    </div>
+    <br/>
     <div class="tm-media">
         <a href="#"> <img src="images/fb.png"></a>
         <a href="#"> <img src="images/G.png"></a>
         <a href="#"> <img src="images/twittr.png"></a>
-        <a href="#">  <img src="images/insta.png"></a>
-        
-        </div>
-<!--        <a href="#">  <img class="tm-up" src="images/up.png"> </a>-->
-    </footer>
-    
+        <a href="#"> <img src="images/insta.png"></a>
 
-    
-    </body>
-    
+    </div>
+    <!--        <a href="#">  <img class="tm-up" src="images/up.png"> </a>-->
+</footer>
+
+
+</body>
+
 </html>
     
 

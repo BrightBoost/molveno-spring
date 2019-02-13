@@ -29,8 +29,9 @@
         "lastName" : lastName,
         "email" : email,
         "password" : password,
-        "postcode" : postcode,
         "street" : street,
+        "houseNumber" : houseNumber,
+        "postcode" : postcode,
         "city" : city,
         "country" : country,
         "phone" : phone
@@ -277,7 +278,7 @@
         </style>
 </head>
 <body>
-<form class ="profile-container" action="/action_page.php">
+<div class ="profile-container" action="/action_page.php">
           <div class="container">
               <header class="tm-header">
                 <a href="index.html"><img class="tm-logo" src="images/logo-molveno-holiday.png" alt="Molveno Hotel"></a>
@@ -555,7 +556,7 @@
             <label for="phone"><b>Telephone Number</b></label>
             <input type="tel" pattern="^[\+]\d([1-9])+(?:-?\d){4,}" placeholder="+3xxxxx" id="guestPhone"  required>
 
-                  <input type="submit" value="Submit">
+                  <!--<input type="submit" value="Submit">-->
 
             <hr>
             <p>By submitting your booking you agree to our <a href="#">Terms & Privacy</a>.</p>
@@ -566,7 +567,7 @@
 
             <div class="text-center">
                 <!-- Button HTML (to Trigger Modal) -->
-                <a href="#myModal" data-toggle="modal"><button id="add" onclick="saveGuest()" type="submit" class="registerbtn">Submit</button></a>
+                <a href="#myModal" data-toggle="modal"><input type="submit" value="Submit"><button id="add" onclick="saveGuest()">Submit</button></a>
               </div>
               <!-- Modal HTML -->
               <div id="myModal" class="modal fade">

@@ -1,5 +1,7 @@
-package com.molveno.molveno.hotel.Guest;
+package com.molveno.molveno.hotel.guest;
 
+import com.molveno.molveno.hotel.guest.Guest;
+import com.molveno.molveno.hotel.guest.GuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +24,9 @@ public class GuestController {
     }
 
     @RequestMapping(value = "/add-guest", method = RequestMethod.POST, consumes="application/json")
-    public void saveGuest(@RequestBody Guest guest){
+    public Guest saveGuest(@RequestBody Guest guest){
         guestRepository.save(guest);
+        return guest;
     }
 
     @RequestMapping(value = "/edit-guest", method = RequestMethod.POST, consumes = "application/json")

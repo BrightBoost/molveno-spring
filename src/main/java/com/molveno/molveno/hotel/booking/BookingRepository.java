@@ -1,9 +1,7 @@
-package com.molveno.molveno.hotel.Booking;
+package com.molveno.molveno.hotel.booking;
 
-import com.molveno.molveno.hotel.Guest.Guest;
 import org.springframework.data.repository.CrudRepository;
 
-import java.awt.print.Book;
 import java.util.List;
 
 public interface BookingRepository extends CrudRepository<Booking,Long> {

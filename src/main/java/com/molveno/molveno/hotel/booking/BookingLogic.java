@@ -2,7 +2,7 @@
 //
 //
 //import com.molveno.molveno.hotel.Guest.Guest;
-//import com.molveno.molveno.hotel.room.Room;
+//import Room;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;
 //

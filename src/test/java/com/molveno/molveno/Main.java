@@ -2,7 +2,7 @@
 //
 //
 //import com.molveno.molveno.hotel.Guest.Guest;
-//import com.molveno.molveno.hotel.room.Room;
+//import Room;
 //import com.molveno.molveno.hotel.Booking.Booking;
 //
 //

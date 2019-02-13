@@ -1,9 +1,8 @@
-package com.molveno.molveno.hotel.Booking;
+package com.molveno.molveno.hotel.booking;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @RestController

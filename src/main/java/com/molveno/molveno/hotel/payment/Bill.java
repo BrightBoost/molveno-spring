@@ -1,7 +1,7 @@
-package com.molveno.molveno.hotel.Payment;
+package com.molveno.molveno.hotel.payment;
 
 
-import com.molveno.molveno.hotel.Guest.Guest;
+import com.molveno.molveno.hotel.guest.Guest;
 import com.molveno.molveno.hotel.room.RoomType;
 
 public class Bill {

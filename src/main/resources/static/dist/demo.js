@@ -7,15 +7,15 @@ $(function ($) {
     maximize: 100,      
     })
         $('#handleCounter2').handleCounter({
-    minimum: 1,
+    minimum: 0,
     maximize: 100,
            })
            $('#handleCounter3').handleCounter({
-            minimum: 1,
+            minimum: 0,
             maximize: 100,
                    })
                    $('#handleCounter4').handleCounter({
-                    minimum: 1,
+                    minimum: 0,
                     maximize: 100,
                            })
        });
@@ -33,14 +33,10 @@ addEventListener('DOMContentLoaded', function () {
 		mode : 'range',
         separator: '    to   ',
         position :'bottom',
-//        hide_on_select : true,
+        hide_on_select : true,
         format: 'd b-y',
-      
 	});
-//pickmeup('.range').show();
-
-
-    
+pickmeup('.range').show();
 });
 
 
@@ -56,23 +52,6 @@ function initMap() {
           map: map
         });
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // image slider main
 $(document).ready(function(){

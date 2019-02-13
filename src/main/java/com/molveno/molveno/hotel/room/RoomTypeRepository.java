@@ -9,6 +9,4 @@ public interface RoomTypeRepository extends CrudRepository <RoomType,Long> {
         List<RoomType> findAll();
         RoomType findById(long id);
 
-
-
 }

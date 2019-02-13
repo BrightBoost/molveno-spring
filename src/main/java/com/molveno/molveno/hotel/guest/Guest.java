@@ -1,4 +1,4 @@
-package com.molveno.molveno.hotel.Guest;
+package com.molveno.molveno.hotel.guest;
 
 import javax.persistence.*;
 
@@ -26,12 +26,16 @@ public class Guest {
     private String houseNumber;
     @Column(name = "postcode")
     private String postcode;
-    @Column (name = "city")
+    @Column(name = "city")
     private String city;
     @Column(name = "country")
     private String country;
     @Column(name = "phone")
     private String phone;
+
+//    private String signIn;
+//    private String signUp;
+
     public long getId() {
         return id;
     }
@@ -79,6 +83,7 @@ public class Guest {
     public void setStreet(String street) {
         this.street = street;
     }
+
     public String getHouseNumber() {
         return houseNumber;
     }
@@ -110,6 +115,7 @@ public class Guest {
     public void setCountry(String country) {
         this.country = country;
     }
+
     public String getPhone() {
         return phone;
     }
@@ -117,4 +123,20 @@ public class Guest {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+//    public String getSignIn() {
+//        return signIn;
+//    }
+//
+//    public void setSignIn(String signIn) {
+//        this.signIn = signIn;
+//    }
+//
+//    public String getSignUp() {
+//        return signUp;
+//    }
+//
+//    public void setSignUp(String signUp) {
+//        this.signUp = signUp;
+//    }
 }

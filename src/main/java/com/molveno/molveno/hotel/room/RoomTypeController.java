@@ -14,25 +14,26 @@ public class RoomTypeController {
     RoomTypeRepository roomTypeRepository;
 
 
-    @RequestMapping(value = "/get-roomType", method =  RequestMethod.GET)
-    public List<RoomType> getRoomsType(){
+    @RequestMapping(value = "/get-roomType", method = RequestMethod.GET)
+    public List<RoomType> getRoomsType() {
         return roomTypeRepository.findAll();
     }
 
-    @RequestMapping(value = "/add-roomType" ,method = RequestMethod.POST ,consumes="application/json")
-    public void saveRoomType(@RequestBody RoomType roomType){
+    @RequestMapping(value = "/add-roomType", method = RequestMethod.POST, consumes = "application/json")
+    public void saveRoomType(@RequestBody RoomType roomType) {
         roomTypeRepository.save(roomType);
     }
 
-    @RequestMapping(value = "/edit-roomType",method = RequestMethod.POST ,consumes = "application/json")
-    public void editRoomType(@RequestBody RoomType roomType){
-        RoomType roomType1 =roomTypeRepository.findById(roomType.getId());
+    @RequestMapping(value = "/edit-roomType", method = RequestMethod.POST, consumes = "application/json")
+    public void editRoomType(@RequestBody RoomType roomType) {
+        RoomType roomType1 = roomTypeRepository.findById(roomType.getId());
         roomType1.setRoomType(roomType.getRoomType());
         roomType1.setRoomPrice(roomType.getRoomPrice());
         roomTypeRepository.save(roomType1);
     }
+
     @RequestMapping(value = "/delete-roomType", method = RequestMethod.POST, consumes = "application/json")
-    public void deleteRoomType(@RequestBody RoomType roomType){
+    public void deleteRoomType(@RequestBody RoomType roomType) {
         roomTypeRepository.deleteById(roomType.getId());
     }
 

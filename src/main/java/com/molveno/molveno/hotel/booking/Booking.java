@@ -1,15 +1,11 @@
-package com.molveno.molveno.hotel.Booking;
+package com.molveno.molveno.hotel.booking;
 
-import com.molveno.molveno.hotel.Guest.Guest;
+import com.molveno.molveno.hotel.guest.Guest;
 import com.molveno.molveno.hotel.room.Room;
-import com.molveno.molveno.hotel.room.RoomType;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @Entity
 @Table (name = "Booking")

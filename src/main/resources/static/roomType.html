@@ -21,6 +21,7 @@
 
         })
 
+
         function deleteRoomType(){
         var id = $("#types option:selected").val();
         var object = {
@@ -39,6 +40,25 @@
         })
 
         }
+
+        <!--function deleteRoomType(){-->
+        <!--var id = $("#types option:selected").val();-->
+        <!--var object = {-->
+        <!--"id" : id-->
+        <!--};-->
+        <!--var jsonObject = JSON.stringify(object);-->
+
+        <!--$.ajax({-->
+            <!--url:"http://localhost:8080/delete-roomType",-->
+            <!--type:"post",-->
+               <!--data: jsonObject,-->
+              <!--contentType:"application/json;",-->
+              <!--dataType: "application/json",-->
+              <!--success: alert("success")-->
+
+        <!--})-->
+
+        <!--}-->
 
         function editRoomType(){
         var roomTypeName = $("#typeNewName").val();
@@ -158,7 +178,7 @@ padding-top: 50px
 
         <div id="category">
             <select id="types">
-
+                <option value="         "></option>
             </select>
             <p>New Type Name</p>
             <input id="typeNewName" type="text" value="">
