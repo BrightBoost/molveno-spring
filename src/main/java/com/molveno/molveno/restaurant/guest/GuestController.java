@@ -47,8 +47,11 @@ return guest;
         if (!guest.getMobileNumber().equals("")) {
             g.setMobileNumber(guest.getMobileNumber());
         }
-        if (!guest.getName().equals("")) {
-            g.setName(guest.getName());
+        if (!guest.getFirstName().equals("")) {
+            g.setFirstName(guest.getFirstName());
+        }
+        if (!guest.getLastName().equals("")) {
+            g.setLastName(guest.getLastName());
         }
 
         guestRepository.save(g);

@@ -19,13 +19,76 @@
 
 
 
-                        var s1="<input type=\"checkbox\" name=\"dx\" id=\""+obj.id+"\""+">"+ obj.ingredientsName +" "+ obj.ingredientQuantityType +"<input  type=\"text\" name=\"dx\" id=\""+obj.id+"A" +"\""+"> "+"<br>";
-
+                        var s1="<input type=\"checkbox\" name=\"dx\" id=\""+obj.id+"\""+">"+ obj.ingredientsName +" "+obj.priceIngredients+" euro per "+ obj.ingredientQuantityType +"<br>"+"<input  type=\"text\" name=\"dx\" id=\""+obj.id+"A" +"\""+"> "+"<br>";
+                        var s2="<option value=\""+obj.id+"\""+">"+ obj.ingredientsName +" "+obj.priceIngredients+" euro per "+ obj.ingredientQuantityType +"</option>";
 
                         $(s1).appendTo('#s1');
+                        $(s2).appendTo('#ingtot');
+                         })}
+                  });
+
+
+$.ajax({
+                url:"http://localhost:8080/get-dish",
+                type: "get",
+                success: function(data){
+                    $.each(data,function(id,obj){
+
+
+
+
+                       var s10="<option value="+obj.id+">"+obj.dishName+" "+obj.dishPrice+" euro "+obj.dishType+"</option>";;
+
+
+                        $(s10).appendTo('#s10');
                          })}
                   });
            })
+
+function editIng(){
+
+
+              var ingredientsName = $("#newname").val();
+              var priceIngredients = $("#p1").val();
+              var ingredientQuantityType =$("#t1 option:selected").val();
+              var ingid = $("#ingtot option:selected").val();
+
+
+              var object ={
+              "id":ingid,
+              "ingredientsName":ingredientsName,
+              "priceIngredients":priceIngredients,
+              "ingredientQuantityType":ingredientQuantityType
+
+              };
+
+              var jsonObject=JSON.stringify(object);
+
+              $.ajax({
+
+              url:"http://localhost:8080/edit-ing",
+              type:"post",
+              data: jsonObject,
+              contentType:"application/json;",
+
+              dataType: "application/json"
+
+
+
+          })
+
+
+
+
+
+            }
+
+
+
+
+
+
+
 
 function saveIng(){
 
@@ -122,6 +185,65 @@ $("input:checkbox").each(function(){
 
 
 
+function start(){
+var someObj=[];
+let tot = "";
+
+$("input:checkbox").each(function(){
+    var $this = $(this);
+
+    if($this.is(":checked")){
+
+
+    for (var i in Ara){
+    if (Ara[i].id == ($this.attr("id"))){
+    someObj.push(Ara[i]);
+    var ing = $this.attr("id")+"A";
+    var q =document.getElementById(ing).value;
+    tot += q+"A";
+    console.log(tot);
+    }
+
+    }
+
+    }
+});
+
+
+              var dishName = $("#dishName").val();
+ var dishType =$("#s20 option:selected").val();
+
+              var object ={
+              "dishName":dishName,
+              "ingredients":someObj,
+              "ingredientsQuan":tot,
+              "dishType":dishType
+              };
+
+              var jsonObject=JSON.stringify(object);
+
+              $.ajax({
+
+              url:"http://localhost:8080/save-dish",
+              type:"post",
+              data: jsonObject,
+              contentType:"application/json;",
+
+              dataType: "application/json"
+
+
+
+          })
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,24 +255,57 @@ $("input:checkbox").each(function(){
 
 </head>
 
-<P>add ingredients</P>
-<p>name</p>
-<br>
+<h1>Add ingredients</h1>
+<p>Name</p>
 <input id="1">
-
 <p> Type </p>
 <select id="type">
     <option value="Kg">Kg</option>
     <option value="piece">piece</option>
 </select>
-<br>
-<p>price</p>
+<p>Price</p>
 <input id="2">
+<br>
+<br>
 <button type="button" onclick="saveIng();CheckName()">Add ingredient</button>
+<p></p>
 
+<h4>Edit ingredients</h4>
+
+<select id="ingtot"></select>
+<p>Name</p>
+<input id="newname">
+<p> Type </p>
+<select id="t1">
+    <option value="Kg">Kg</option>
+    <option value="piece">piece</option>
+</select>
+<p>Price</p>
+<input id="p1">
+<p></p>
+<button type="button" onclick="editIng()">Edit ingredient</button>
+
+<p>-----------------------------------------------------------------------
+</p>
+<p>Get all dishes</p>
+<select id="s10"></select>
+<h1>Add dish</h1>
+<h2>Check and fill in the quantities for the ingredients you want in the dish </h2>
 <form action="/action_page.php" id="s1">
 </form>
+<p></p>
+<p></p>
+<p>Dish name</p>
+<input type="text" id="dishName" >
+<p></p>
+<p>Dish type</p>
+<select id="s20">
+    <option value="Starter">Starter</option>
+    <option value="Snacks">Snacks</option>
+    <option value="Main course">Main course</option>
+    <option value="Dessert">Dessert</option>
+</select>
+<button type="button" onclick="start()">Add Dish</button>
 
-<button type="button" onclick="start()">Start the function</button>
 </body>
 </html>

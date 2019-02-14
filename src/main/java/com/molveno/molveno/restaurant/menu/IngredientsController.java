@@ -60,7 +60,7 @@ public class IngredientsController {
         if (ingredient.getPriceIngredients() != 0.0) {
             g.setPriceIngredients(ingredient.getPriceIngredients());
         }
-
+g.setIngredientQuantityType(ingredient.getIngredientQuantityType());
         ingredientRepository.save(g);
 
 

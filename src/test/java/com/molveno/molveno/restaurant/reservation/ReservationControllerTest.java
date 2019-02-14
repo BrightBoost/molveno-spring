@@ -59,7 +59,7 @@ public class ReservationControllerTest {
         Reservation res1 = new Reservation();
         Guest gus1 = new Guest();
         gus1.setId(1);
-        gus1.setName("Nina");
+       // gus1.setName("Nina");
         gus1.setMobileNumber("0687443322");
         res1.setGuest(gus1);
         //LocalDateTime l1 = LocalDateTime.of(2019,3,13,14,3);
@@ -112,7 +112,7 @@ res1.setId(1);
         Reservation res1 = new Reservation();
         Guest gus1 = new Guest();
         gus1.setId(1);
-        gus1.setName("Nina");
+      //  gus1.setName("Nina");
         gus1.setMobileNumber("0687443322");
         res1.setGuest(gus1);
         //LocalDateTime l1 = LocalDateTime.of(2019,3,13,14,3);

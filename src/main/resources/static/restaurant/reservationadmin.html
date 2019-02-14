@@ -48,7 +48,7 @@ x.forEach(function(a) {
   b=b+" ";
 });
 
-                        var s="<option value="+obj.id+">"+e+" "+obj.guest.name+" "+"for"+" "+obj.numberOfpoeple+"  "+"persons"+" "+b +"</option>";
+                        var s="<option value="+obj.id+">"+e+" "+obj.guest.lastName+" "+"for"+" "+obj.numberOfpoeple+"  "+"persons"+" "+b +"</option>";
                         $(s).appendTo('#reservation');
                      })}
             });
@@ -58,7 +58,7 @@ x.forEach(function(a) {
                 type: "get",
                 success: function(data){
                     $.each(data,function(id,obj){
-                        var s1="<option value="+obj.id+">"+obj.name+" "+obj.email+" "+obj.mobileNumber+"</option>";
+                        var s1="<option value="+obj.id+">"+obj.firstName+" "+obj.lastName+" "+obj.email+" "+obj.mobileNumber+"</option>";
                         $(s1).appendTo('#Guest');
                      })}
             });
@@ -168,13 +168,15 @@ function editGuest(){
 
 
 
-              var name = $("#editname").val();
+              var firstName = $("#editname").val();
+              var lastName = $("#editname1").val();
               var mobileNumber = $("#editMobileNumber").val();
               var email = $("#editEmail").val();
               var id = $("#Guest option:selected").val();
 
               var object ={
-              "name":name,
+              "firstName":firstName,
+              "lastName":lastName,
               "mobileNumber":mobileNumber,
               "id":id,
               "email":email
@@ -269,8 +271,10 @@ function editGuest(){
 <br>
 <br>
 <form>
-    <p>edit the name</p>
+    <p>edit the first name</p>
     <input id="editname" type="text"></input>
+    <p>edit the last name</p>
+    <input id="editname1" type="text"></input>
     <p>edit the MobileNumber</p>
     <input id="editMobileNumber"  type="text" ></input>
     <p>edit the email</p>

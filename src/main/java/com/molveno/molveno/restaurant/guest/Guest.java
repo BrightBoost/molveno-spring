@@ -11,8 +11,18 @@ public class Guest {
     @Access(AccessType.PROPERTY)
     private long id;
 
-    @Column
-    private String name;
+    @Column(name = "firsname")
+    private String firstName;
+    @Column(name = "lastName")
+    private String lastName;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     @Column (name="mobilenumber")
     private String mobileNumber;
@@ -36,12 +46,13 @@ public class Guest {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getMobileNumber() {

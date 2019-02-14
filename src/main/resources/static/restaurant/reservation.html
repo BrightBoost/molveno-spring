@@ -46,7 +46,8 @@ var obj={
 
         "guest": {
 
-            "name": name,
+            "firstName": first,
+            "lastName":lastName,
             "mobileNumber":phoneNum ,
             "email": email
         }
@@ -328,7 +329,7 @@ function calcHour(){
   var f = document.getElementById("datum").value;
   var g = document.getElementById("nr").value;
 
-  var x = "Reservation has been made :  <br> on " +f +" at " +e + "<br>"+  "for " + g + " persons <br>" + "under the name " + "<br>"+ a +" "+ b + "<br>"+ c +"<br>"+"on" ;
+  var x = "Reservation has been made :  <br> on " +f +" at " +e + "<br>"+  "for " + g + " persons <br>" + "under the name " + "<br>"+ a +" "+ b + "<br>"+ c +"<br>";
   document.getElementById("demo").innerHTML = x;
 }
 
@@ -404,7 +405,7 @@ response.forEach(function (arrayItem) {
 });
     var table ="<p>"+x+"</p>";
     console.log(table);
-    $(table).appendTo('#demo');
+   // $(table).appendTo('#demo');
 
 }
 

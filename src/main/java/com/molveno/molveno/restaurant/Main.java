@@ -33,8 +33,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("What is your name?");
         String x = sc.nextLine();
-        geust1.setName(x);
-        System.out.println("The name is " + geust1.getName());
+        //geust1.setName(x);
+        //System.out.println("The name is " + geust1.getName());
         Scanner sc1 = new Scanner(System.in);
         System.out.println("What is your telephone number ?");
         String y = sc.nextLine();
