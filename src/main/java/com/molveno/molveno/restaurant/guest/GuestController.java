@@ -25,7 +25,7 @@ public class GuestController {
     public Guest saveGuest(@RequestBody Guest guest) {
 
         guestRepository.save(guest);
-return guest;
+        return guest;
     }
 
     @RequestMapping(value = "/delete-guest", method = RequestMethod.DELETE, consumes = "application/json")

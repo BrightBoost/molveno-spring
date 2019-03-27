@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addshows</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script>
+$(document).ready(function(){
+
+ $.ajax({
+                url:"http://localhost:8080/get-category",
+                type: "get",
+                success: function(data){
+                    $.each(data,function(id,obj){
+                        var s1="<option value="+obj.name+">"+ obj.name +" </option>";
+                        $(s1).appendTo('#category');
+                         $(s1).appendTo('#category1');
+                     })}
+            });
+            $.ajax({
+                url:"http://localhost:8080/get-show",
+                type: "get",
+                success: function(data){
+                    $.each(data,function(id,obj){
+                        var s1="<option value="+obj.id+">"+obj.title+" /  "+obj.movieCategory+"</option>";
+                        $(s1).appendTo('#show');
+                        $(s1).appendTo('#show1');
+                     })}
+            });
+
+
+
+})
+
+
+
+function saveShow(){
+
+
+
+              var title =$("#1").val()
+              var director=$("#2").val()
+              var releaseDate =$("#3").val()
+              var url =$("#4").val()
+              var movieCategory =$("#category option:selected").val();
+               var description =$("#9").val()
+
+
+
+              var object ={
+              "title":title,
+              "director":director,
+              "releaseDate":releaseDate,
+              "url":url,
+              "movieCategory":movieCategory,
+              "description":description
+
+
+
+              };
+
+              var jsonObject=JSON.stringify(object);
+
+              $.ajax({
+
+              url:"http://localhost:8080/save-show",
+              type:"post",
+              data: jsonObject,
+              contentType:"application/json;",
+               success: alert("success"),
+              dataType: "application/json"
+
+
+
+          })
+
+
+
+
+
+            }
+function editShow(){
+
+
+
+               var title =$("#5").val()
+              var director=$("#6").val()
+              var releaseDate =$("#7").val()
+              var url =$("#8").val()
+               var description =$("#10").val()
+              var movieCategory =$("#category1 option:selected").val();
+              var id = $("#show option:selected").val();
+              var object ={
+              "id":id,
+              "title":title,
+              "director":director,
+              "releaseDate":releaseDate,
+              "url":url,
+              "movieCategory":movieCategory,
+              "description":description
+
+
+
+              };
+
+              var jsonObject=JSON.stringify(object);
+
+              $.ajax({
+
+              url:"http://localhost:8080/edit-show",
+              type:"post",
+              data: jsonObject,
+              contentType:"application/json;",
+                success: alert("success"),
+              dataType: "application/json"
+
+
+
+          })
+
+                  }
+function deleteShow(){
+var id = $("#show1 option:selected").val();
+
+              var object ={
+              "id":id
+              };
+
+              var jsonObject=JSON.stringify(object);
+
+              $.ajax({
+
+              url:"http://localhost:8080/delete-show",
+              type:"delete",
+              data: jsonObject,
+              contentType:"application/json;",
+                success: alert("success"),
+              dataType: "application/json"
+
+
+
+})
+}
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+<h1>Add Show</h1>
+<p>Show title </p>
+<input id="1">
+<p>Show director </p>
+<input id="2">
+<p>Show releaseDate </p>
+<input id="3">
+<p>Show url ID </p>
+<input id="4">
+<p>Show description  </p>
+<input id="9">
+
+<p>Show category</p>
+<select id="category"></select>
+
+<button onclick="saveShow()"> Add Show</button>
+
+
+
+<h1>Edit Show</h1>
+<select id="show"></select>
+<p>Edit title </p>
+<input id="5">
+<p>Edit director </p>
+<input id="6">
+<p>Edit releaseDate </p>
+<input id="7">
+<p>Edit url ID </p>
+<input id="8">
+<p>Edit description  </p>
+<input id="10">
+<p>Edit category</p>
+<select id="category1"></select>
+
+<button onclick="editShow()"> Edit Show</button>
+
+<br>
+
+<h1>Delete Show</h1>
+<select id="show1"></select>
+<button onclick="deleteShow()">Delete Show</button>
+
+
+</body>
+</html>

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +74,10 @@ double price =0;
 
 
 */
+Period a = Period.ofDays(10);
+LocalDate a1 = LocalDate.now();
+a1=a1.minus(a);
+
 
         return dishRepository.findAll();
 
@@ -110,7 +116,9 @@ double price =0;
         }
 
 
+
         dish.setDishPrice(price);
+
 
 
 
@@ -120,4 +128,7 @@ double price =0;
         dishRepository.save(dish);
     }
 
+    public static double roundToHalf(double d) {
+        return Math.round(d * 2) / 2.0;
+    }
 }

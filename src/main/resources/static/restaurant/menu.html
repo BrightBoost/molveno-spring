@@ -16,6 +16,49 @@
 
     <script type="text/javascript" src="dist/demo.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script>
+    var Ara = [];
+$(document).ready(function(){
+
+
+
+    $.ajax({
+    url:"http://localhost:8080/get-dish",
+    type: "get",
+    success: function(data){
+
+    $.each(data,function(id,obj){
+    var y = obj.ingredients;
+        var m ="";
+    y.forEach(function(x) {
+
+
+
+    m += x.ingredientsName + " " +",";
+    });
+
+
+
+
+    var s10="<p>"+obj.dishName+" : " + m +"     " +obj.dishPrice+" euro "+"</p>"+ "<br>";
+    if(obj.dishType == "Starter"){
+        $(s10).appendTo('#tabelM1');
+    }
+        else if(obj.dishType == "Snacks"){
+        $(s10).appendTo('#tabelM2');
+    }
+           else if(obj.dishType == "Main course"){
+        $(s10).appendTo('#tabelM4');
+    }
+           else if (obj.dishType == "Dessert"){
+        $(s10).appendTo('#tabelM5');
+    }
+
+
+    })}
+    });
+    })
+    </script>
 </head>
 <body>
 <header class="tm-header">
@@ -40,62 +83,47 @@
 
 <main>
 
-<div id="menukader">
-    <ul>
-        <li>
-            <a href="#tabelM1" id="M1" class="link">Starters</a>
-        </li>
-        <li>
-            <a href="#tabelM2" id="M2" class="link">Snacks</a>
-        </li>
-        <li>
-            <a href="#tabelM3" id="M3" class="link">Drinks</a>
-        </li>
-        <li>
-            <a href="#tabelM4" id="M4" class="link">Main courses</a>
-        </li>
-        <li>
-            <a href="#tabelM5" id="M5" class="link">Desserts</a>
-        </li>
-    </ul>
+    <div id="menukader">
+        <ul>
+            <li>
+                <a href="#tabelM1" id="M1" class="link">Starters</a>
+            </li>
+            <li>
+                <a href="#tabelM2" id="M2" class="link">Snacks</a>
+            </li>
+            <li>
+                <a href="#tabelM3" id="M3" class="link">Drinks</a>
+            </li>
+            <li>
+                <a href="#tabelM4" id="M4" class="link">Main courses</a>
+            </li>
+            <li>
+                <a href="#tabelM5" id="M5" class="link">Desserts</a>
+            </li>
+        </ul>
 
-    <table id="tabelM1" data-id="eerste" class="menu">
-        <tr>
-            <td>Prosciutto : wrapped grissini breadsticks with cheese sauce.</td>
-            <td>€ 5,50</td>
-        </tr>
-        <tr>
-            <td>  </td>
+        <table id="tabelM1" data-id="eerste" class="menu">
 
-        </tr>
-    </table>
-    <table id="tabelM2" data-id="tweede"  class="menu">
-        <tr>
-            <td>Bruschetta : grilled bread topped with veggies, rubbed garlic and tomato mix</td>
-            <td>€ 7,00</td>
-        </tr>
-    </table>
-    <table id="tabelM3" data-id="derde"  class="menu">
-        <tr>
-            <td>Cola</td>
-            <td>€ 3,00</td>
-        </tr>
-    </table>
-    <table id="tabelM4" data-id="vierde"  class="menu">
-        <tr>
-            <td>Mushroom-Sausage Ragù:  mushrooms, olive oil, and sweet Italian sausages. </td>
-            <td>€ 20,50</td>
-        </tr>
-    </table>
-    <table id="tabelM5" data-id="vijfde"  class="menu">
-        <tr>
-            <td>Gelato : custard, cream, and milk, without eggs</td>
-            <td>€ 5</td>
-        </tr>
-    </table>
-</div>
+        </table>
+        <table id="tabelM2" data-id="tweede"  class="menu">
+
+        </table>
+        <table id="tabelM3" data-id="derde"  class="menu">
+            <tr>
+                <td>Cola</td>
+                <td>€ 3,00</td>
+            </tr>
+        </table>
+        <table id="tabelM4" data-id="vierde"  class="menu">
+
+        </table>
+        <table id="tabelM5" data-id="vijfde"  class="menu">
+
+        </table>
+    </div>
 </main>
 
 
 </body>
 </html>
+
