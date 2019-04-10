@@ -8,5 +8,4 @@ public interface GuestRepository extends CrudRepository<Guest,Long> {
     List<Guest> findAll();
     Guest findById(long id);
 
-
 }

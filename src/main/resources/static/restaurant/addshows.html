@@ -143,6 +143,36 @@ var id = $("#show1 option:selected").val();
 })
 }
 
+function getById(){
+
+
+              var id = $("#input").val();
+
+
+
+              $.ajax({
+
+              url:"http://localhost:8080/get-one-show/" + id,
+              type:"get",
+          success: function(response) {
+
+
+     }
+
+
+
+          })
+
+
+
+
+
+            }
+
+
+
+
+
 
 
 
@@ -150,7 +180,7 @@ var id = $("#show1 option:selected").val();
 
     </script>
 </head>
-<body>
+
 
 
 <h1>Add Show</h1>
@@ -194,6 +224,8 @@ var id = $("#show1 option:selected").val();
 <h1>Delete Show</h1>
 <select id="show1"></select>
 <button onclick="deleteShow()">Delete Show</button>
+
+
 
 
 </body>

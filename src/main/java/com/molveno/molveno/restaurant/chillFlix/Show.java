@@ -1,6 +1,9 @@
 package com.molveno.molveno.restaurant.chillFlix;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "movie")
@@ -21,8 +24,50 @@ public class Show {
     private String url;
     @Column(name = "moviecategory")
     private String movieCategory;
-    @Column(name = "description")
+
+@Column(name = "description" ,columnDefinition="LONGTEXT")
     private String description;
+@Column(name="favoritestatus")
+private boolean favoriteStatus;
+@Column(name="Time")
+private LocalDateTime time;
+    @Column(name="counter")
+    private int counter;
+
+    @Column(name = "favoriteconuter")
+    private  int favoriteCounter;
+
+    public int getFavoriteCounter() {
+        return favoriteCounter;
+    }
+
+    public void setFavoriteCounter(int favoriteCounter) {
+        this.favoriteCounter = favoriteCounter;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
+    public boolean isFavoriteStatus() {
+        return favoriteStatus;
+    }
+
+    public void setFavoriteStatus(boolean favoriteStatus) {
+        this.favoriteStatus = favoriteStatus;
+    }
 
     public String getDescription() {
         return description;
@@ -79,4 +124,6 @@ public class Show {
     public void setUrl(String url) {
         this.url = url;
     }
+
+
 }

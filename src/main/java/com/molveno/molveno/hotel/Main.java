@@ -74,7 +74,7 @@ public class Main {
 
 //        System.out.println("current is  " + current);
 
-        //System.out.println(ReservationLogic.checkDateTime(ReservationRequest, current));
+        //System.out.println(BoatReservationLogic.checkDateTime(ReservationRequest, current));
 
         Room room1 = new Room();
         room1.setId(1);
@@ -88,7 +88,7 @@ public class Main {
         Room room4 = new Room();
         room4.setId(4);
 
-        //boolean timeAvailable = ReservationLogic.checkDateTime(ReservationRequest, current);
+        //boolean timeAvailable = BoatReservationLogic.checkDateTime(ReservationRequest, current);
 
         List<Room> rooms = new ArrayList<>();
         rooms.add(room1);

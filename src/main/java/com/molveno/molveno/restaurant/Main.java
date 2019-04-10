@@ -108,7 +108,7 @@ public class Main {
         current.add(Reservation2);
         // System.out.println("current is  " + current);
 
-        //System.out.println(ReservationLogic.checkDateTime(ReservationRequest, current));
+        //System.out.println(BoatReservationLogic.checkDateTime(ReservationRequest, current));
 
 
 
@@ -127,19 +127,19 @@ public class Main {
         Reservation reservation3 = new Reservation();
 
 
-        //System.out.println(ReservationLogic.getAvailableTables(ReservationRequest,tables,listReservations));
+        //System.out.println(BoatReservationLogic.getAvailableTables(ReservationRequest,tables,listReservations));
         //System.out.println(listReservations);
 
 
         // System.out.println(listReservations);
-       // ReservationLogic.doReserve(ReservationRequest, tables, listReservations, reservation3);
+       // BoatReservationLogic.doReserve(ReservationRequest, tables, listReservations, reservation3);
         //System.out.println(listReservations);
 
 
-        //ReservationLogic.cancel(reservation3, listReservations);
-        //   ReservationLogic.cancel(rese1,listReservations);
-        // ReservationLogic.cancel(rese2,listReservations);
-        //   ReservationLogic.cancel(r,listReservations);
+        //BoatReservationLogic.cancel(reservation3, listReservations);
+        //   BoatReservationLogic.cancel(rese1,listReservations);
+        // BoatReservationLogic.cancel(rese2,listReservations);
+        //   BoatReservationLogic.cancel(r,listReservations);
 
 
         //System.out.println((listReservations));
@@ -157,7 +157,7 @@ public class Main {
 //        LocalTime time4 = LocalTime.of(13, 0);
 
         //  LocalDateTime ReservationRequest2 = LocalDateTime.of(date4, time4);
-        //System.out.println( ReservationLogic.getAvailableTables(ReservationRequest2,tables,listReservations).toString());
+        //System.out.println( BoatReservationLogic.getAvailableTables(ReservationRequest2,tables,listReservations).toString());
 
 
 
